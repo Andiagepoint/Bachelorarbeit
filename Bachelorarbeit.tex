@@ -1,21 +1,31 @@
 \documentclass[11pt,a4paper,oneside,ngerman]{report}
 \usepackage[ngerman]{babel}
-\usepackage[latin1]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{bibgerm} 
+\usepackage{url}
+\usepackage{geometry}
+\usepackage[scaled]{helvet}
+\usepackage[onehalfspacing]{setspace}
 \geometry{a4paper, top=25mm, left=25mm, right=25mm, bottom=30mm,headsep=10mm, footskip=12mm}
 \begin{document}
-\begin{titlepage}
-\author{Andreas Henneberger}
-\title{Aufbau einer Schnittstelle zwischen Matlab und einer Wetterstation über MODBUS}
-\date{\today}
-\maketitle
-\end{titlepage}
+\input{./title.tex}
+\input{./abstract.tex}
+\tableofcontents
+\listoffigures
+\listoftables
 \part{Einleitung}
+\input{./introduction.tex}
 \part{Hauptteil}
 \chapter{Das Modbus-Protokoll}
 \chapter{Aufbau der Wetterstation}
 \chapter{Funktionscode Dokumentation}
 \chapter{Datenanalyse}
 \part{Schluss}
+\chapter{Rechtserklärung}
+\input{./rechtserkl.tex}
+\bibliographystyle{unsrt} 
+\bibliography{literatur} 
 
 \end{document}
 

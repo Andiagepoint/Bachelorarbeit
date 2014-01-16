@@ -1,0 +1,10 @@
+\select@language {ngerman}
+\select@language {ngerman}
+\contentsline {part}{I\hspace {1em}Einleitung}{4}
+\contentsline {part}{II\hspace {1em}Hauptteil}{6}
+\contentsline {chapter}{\numberline {1}Das Modbus-Protokoll}{7}
+\contentsline {chapter}{\numberline {2}Aufbau der Wetterstation}{8}
+\contentsline {chapter}{\numberline {3}Funktionscode Dokumentation}{9}
+\contentsline {chapter}{\numberline {4}Datenanalyse}{10}
+\contentsline {part}{III\hspace {1em}Schluss}{11}
+\contentsline {chapter}{\numberline {5}Rechtserkl\IeC {\"a}rung}{12}

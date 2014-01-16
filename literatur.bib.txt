@@ -1,0 +1,7 @@
+@misc{OEE2, 
+    author = "{HKW-Elektronik GmbH}", 
+    publisher = "HKW-Elektronik GmbH", 
+    title = "Wetterprognose-Station Kompakt WS-K xx Modbus", 
+    month = "November", 
+    year = "2012", 
+    url = "",} 
