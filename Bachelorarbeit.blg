@@ -4,45 +4,45 @@ The top-level auxiliary file: Bachelorarbeit.aux
 The style file: unsrt.bst
 Database file #1: literatur.bib
 Warning--there's a number but no series in NPE
-You've used 2 entries,
+You've used 3 entries,
             1791 wiz_defined-function locations,
-            459 strings with 3928 characters,
-and the built_in function-call counts, 361 in all, are:
-= -- 30
-> -- 8
+            466 strings with 4082 characters,
+and the built_in function-call counts, 499 in all, are:
+= -- 44
+> -- 12
 < -- 2
-+ -- 4
-- -- 2
-* -- 16
-:= -- 58
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 1
++ -- 6
+- -- 3
+* -- 24
+:= -- 81
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 19
-empty$ -- 43
-format.name$ -- 2
-if$ -- 86
+cite$ -- 4
+duplicate$ -- 26
+empty$ -- 58
+format.name$ -- 3
+if$ -- 117
 int.to.chr$ -- 0
-int.to.str$ -- 2
+int.to.str$ -- 3
 missing$ -- 2
-newline$ -- 12
-num.names$ -- 2
-pop$ -- 12
+newline$ -- 17
+num.names$ -- 3
+pop$ -- 14
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 8
+skip$ -- 9
 stack$ -- 0
 substring$ -- 2
-swap$ -- 6
+swap$ -- 8
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 3
-width$ -- 3
-write$ -- 23
+while$ -- 4
+width$ -- 4
+write$ -- 35
 (There was 1 warning)

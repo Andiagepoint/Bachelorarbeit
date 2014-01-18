@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{HKWDoc}
+{HKW-Elektronik GmbH}.
+\newblock {\em Wetterprognose-Station Kompakt WS-K xx Modbus}.
+\newblock HKW-Elektronik GmbH, Industriestraße 12, D-99846 Seebach/Thur, stand
+  23.11.2012 edition, November 2012.
+
 \bibitem{NPE}
 Nationale Plattform~Elektromobilität (NPE).
 \newblock {\em Fortschrittsbericht der Nationalen Plattform Elektromobilität},

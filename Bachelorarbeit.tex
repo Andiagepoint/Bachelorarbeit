@@ -1,9 +1,29 @@
-\documentclass[11pt,a4paper,oneside,ngerman]{report}
+\documentclass[11pt,a4paper,oneside,ngerman,appendixprefix=true,listof=chapterentry]{report}
 \usepackage[ngerman]{babel}
 %\usepackage[latin1]{inputenc}
 \usepackage[utf8]{inputenc}
 \usepackage{bibgerm} 
+\usepackage[german]{varioref}
+\usepackage{hyperref}
 \usepackage{url}
+\usepackage[titletoc,toc]{appendix}
+\usepackage{acronym}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{units}
+\usepackage[table]{xcolor}
+%\makeatletter
+%\def\ScaleIfNeeded{%
+%\ifdim\Gin@nat@width>\linewidth
+%\linewidth
+%\else
+%\Gin@nat@width
+%\fi
+%}
+%\makeatother
 \usepackage{geometry}
 \usepackage[scaled]{helvet}
 \usepackage[onehalfspacing]{setspace}
@@ -19,11 +39,12 @@
 \part{Hauptteil}
 \chapter{Das Modbus-Protokoll}
 \chapter{Aufbau der Wetterstation}
+\input{./weatherstation.tex}
 \chapter{Funktionscode Dokumentation}
 \chapter{Datenanalyse}
 \part{Schluss}
-\chapter{Rechtserklärung}
 \input{./rechtserkl.tex}
+\input{./appendix.tex}
 \bibliographystyle{unsrt} 
 \bibliography{literatur} 
 

@@ -1,0 +1,17 @@
+\BOOKMARK [-1][-]{part.1}{I Einleitung}{}% 1
+\BOOKMARK [-1][-]{part.2}{II Hauptteil}{}% 2
+\BOOKMARK [0][-]{chapter.1}{Das Modbus-Protokoll}{part.2}% 3
+\BOOKMARK [0][-]{chapter.2}{Aufbau der Wetterstation}{part.2}% 4
+\BOOKMARK [1][-]{section.2.1}{Aufbau der Datenstruktur}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.2}{Technischer Aufbau der Station}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.2.1}{Senderauswahl und Stationsaufbau}{section.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.2}{Registereinteilung und Schnittstellenparametrierung}{section.2.2}% 8
+\BOOKMARK [0][-]{chapter.3}{Funktionscode Dokumentation}{part.2}% 9
+\BOOKMARK [0][-]{chapter.4}{Datenanalyse}{part.2}% 10
+\BOOKMARK [-1][-]{part.3}{III Schluss}{}% 11
+\BOOKMARK [0][-]{section*.7}{Appendices}{part.3}% 12
+\BOOKMARK [0][-]{section*.8}{Appendices}{part.3}% 13
+\BOOKMARK [0][-]{appendix.A}{}{part.3}% 14
+\BOOKMARK [1][-]{section.A.1}{Tabelle Datenstruktur}{appendix.A}% 15
+\BOOKMARK [1][-]{section.A.2}{Irgendwas}{appendix.A}% 16
+\BOOKMARK [0][-]{appendix.B}{Abk\374rzungsverzeichnis}{part.3}% 17
