@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/W32TeX) (format=pdflatex 2013.9.26)  16 JAN 2014 22:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/W32TeX) (format=pdflatex 2013.9.26)  19 JAN 2014 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -262,40 +262,280 @@ Package: bibgerm 2000/08/18 v0.1 Support for mixed language bibliographies
 ** idea and languages `german' and `USenglish' implemented by M. Wallmeier **
 ** Modified for LaTeX 2e and german.sty 2.5b by A. Scherer 1 Nov 1995 **
 ** Modified for ngerman.sty and babel.sty by H. Harders 21 August 2000 **)
-(c:/texlive/2013/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+(c:/texlive/2013/texmf-dist/tex/latex/tools/varioref.sty
+Package: varioref 2011/10/02 v1.4z package for extended references (FMi)
+\c@vrcnt=\count89
 )
-(c:/texlive/2013/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2010/09/12 v5.6 Page Geometry
+(c:/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
+(c:/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(c:/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
 (c:/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(c:/texlive/2013/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-(c:/texlive/2013/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-)
 (c:/texlive/2013/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count89
-\Gm@cntv=\count90
-\c@Gm@tempcnt=\count91
-\Gm@bindingoffset=\dimen104
-\Gm@wd@mp=\dimen105
-\Gm@odd@mp=\dimen106
-\Gm@even@mp=\dimen107
-\Gm@layoutwidth=\dimen108
-\Gm@layoutheight=\dimen109
-\Gm@layouthoffset=\dimen110
-\Gm@layoutvoffset=\dimen111
-\Gm@dimlist=\toks17
+(c:/texlive/2013/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(c:/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen104
+\Hy@linkcounter=\count90
+\Hy@pagecounter=\count91
+
+(c:/texlive/2013/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count92
+
+(c:/texlive/2013/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count93
+
+(c:/texlive/2013/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen105
+\Fld@menulength=\count94
+\Field@Width=\dimen106
+\Fld@charsize=\dimen107
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count95
+\c@Item=\count96
+\c@Hfootnote=\count97
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(c:/texlive/2013/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count98
+\c@bookmark@seq@number=\count99
+
+(c:/texlive/2013/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+(c:/texlive/2013/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count100
+\c@@ppsavesec=\count101
+\c@@ppsaveapp=\count102
+)
+(c:/texlive/2013/texmf-dist/tex/latex/acronym/acronym.sty
+Package: acronym 2012/10/29 v1.38 Support for acronyms (Tobias Oetiker)
+
+(c:/texlive/2013/texmf-dist/tex/latex/bigfoot/suffix.sty
+Package: suffix 2006/07/15 1.5 Variant command support
+)
+(c:/texlive/2013/texmf-dist/tex/generic/xstring/xstring.sty
+(c:/texlive/2013/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write3
+\integerpart=\count103
+\decimalpart=\count104
+)
+Package: xstring 2013/2/28  v1.7a  String manipulations (C Tellechea)
+)
+\AC@clearlist=\toks17
+)
+(c:/texlive/2013/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen108
+\extrarowheight=\dimen109
+\NC@list=\toks18
+\extratabsurround=\skip44
+\backup@length=\skip45
+)
+(c:/texlive/2013/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count105
+\float@exts=\toks19
+\float@box=\box26
+\@float@everytoks=\toks20
+\@floatcapt=\box27
+)
+(c:/texlive/2013/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(c:/texlive/2013/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(c:/texlive/2013/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen110
+\captionmargin@=\dimen111
+\captionwidth=\dimen112
+\caption@tempdima=\dimen113
+\caption@indent=\dimen114
+\caption@parindent=\dimen115
+\caption@hangindent=\dimen116
+)
+\c@ContinuedFloat=\count106
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+(c:/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(c:/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(c:/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count107
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+(c:/texlive/2013/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+\TX@col@width=\dimen119
+\TX@old@table=\dimen120
+\TX@old@col=\dimen121
+\TX@target=\dimen122
+\TX@delta=\dimen123
+\TX@cols=\count108
+\TX@ftn=\toks21
+)
+(c:/texlive/2013/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+(c:/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count109
+\rotFPtop=\skip46
+\rotFPbot=\skip47
+\rot@float@box=\box28
+\rot@mess@toks=\toks22
+)
+(c:/texlive/2013/texmf-dist/tex/latex/units/units.sty
+Package: units 1998/08/04 v0.9b Typesetting units
+
+(c:/texlive/2013/texmf-dist/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip48
+\L@UnitsRaiseTextstyle=\skip49
+\L@UnitsRaiseScriptstyle=\skip50
+))
+(c:/texlive/2013/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(c:/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(c:/texlive/2013/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+\everycr=\toks23
+\minrowclearance=\skip51
+)
+\rownum=\count110
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(c:/texlive/2013/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count111
+\Gm@cntv=\count112
+\c@Gm@tempcnt=\count113
+\Gm@bindingoffset=\dimen124
+\Gm@wd@mp=\dimen125
+\Gm@odd@mp=\dimen126
+\Gm@even@mp=\dimen127
+\Gm@layoutwidth=\dimen128
+\Gm@layoutheight=\dimen129
+\Gm@layouthoffset=\dimen130
+\Gm@layoutvoffset=\dimen131
+\Gm@dimlist=\toks24
 )
 (c:/texlive/2013/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
@@ -303,25 +543,83 @@ Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS)
 (c:/texlive/2013/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
+
+LaTeX Warning: Unused global option(s):
+    [appendixprefix=true,listof=chapterentry].
+
 (./Bachelorarbeit.aux)
 \openout1 = `Bachelorarbeit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
 
 
 bibgerm.sty: babel.sty detected
 
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 33.
+(c:/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(c:/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count114
+LaTeX Info: Redefining \Ref on input line 513.
+)
+LaTeX Info: Redefining \ref on input line 33.
+LaTeX Info: Redefining \pageref on input line 33.
+LaTeX Info: Redefining \nameref on input line 33.
+
+(./Bachelorarbeit.out) (./Bachelorarbeit.out)
+\@outlinefile=\write4
+\openout4 = `Bachelorarbeit.out'.
+
+LaTeX Info: Redefining \Ref on input line 33.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: rotating package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+(c:/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count115
+\scratchdimen=\dimen132
+\scratchbox=\box30
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen133
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks26
+) (c:/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(c:/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(c:/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -356,100 +654,546 @@ bibgerm.sty: babel.sty detected
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(./title.tex [1
-
-{c:/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./abstract.te
-x [1]) (./Bachelorarbeit.toc)
-\tf@toc=\write3
-\openout3 = `Bachelorarbeit.toc'.
-
+(./title.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 17.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 17.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 17.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 17.
  [1
 
+{c:/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./abstract.te
+x
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 3.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 3.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 3.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 3.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3 \end{abstract}
+                   [1]) (./Bachelorarbeit.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 7.
+)
+\tf@toc=\write5
+\openout5 = `Bachelorarbeit.toc'.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 37.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 37.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 37.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 37.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.37 \listoffigures
+                    [1
+
 ] (./Bachelorarbeit.lof)
-\tf@lof=\write4
-\openout4 = `Bachelorarbeit.lof'.
+\tf@lof=\write6
+\openout6 = `Bachelorarbeit.lof'.
 
-
-[2
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 38.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 38.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 38.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 38.
+ [2
 
 ] (./Bachelorarbeit.lot)
-\tf@lot=\write5
-\openout5 = `Bachelorarbeit.lot'.
+\tf@lot=\write7
+\openout7 = `Bachelorarbeit.lot'.
 
- [3
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 39.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 39.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 39.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 39.
 
-] [4
+[3
 
-] (./introduction.tex) [5] [6
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 39.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 39.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 39.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 39.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 39.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 39.
+ [4
+
+] (./introduction.tex)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 41.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 41.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 41.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 41.
+ [5]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 41.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 41.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 41.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 41.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 41.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 41.
+ [6
 
 ]
 Kapitel 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 42.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 42.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 43.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 43.
 [7
 
 ]
 Kapitel 2.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 43.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 43.
+(./weatherstation.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 1.
+
+<weatherstation/Datenuebersicht.jpg, id=146, 506.6428pt x 420.82219pt>
+File: weatherstation/Datenuebersicht.jpg Graphic file (type jpg)
+
+<use weatherstation/Datenuebersicht.jpg>
+Package pdftex.def Info: weatherstation/Datenuebersicht.jpg used on input line 
+5.
+(pdftex.def)             Requested size: 329.31392pt x 273.53117pt.
+
+
+LaTeX Warning: Reference `fig:detaildatenstruktur' on page 8 undefined on input
+ line 9.
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 10.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 10.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 10.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 10.
 [8
 
-]
+ <./weatherstation/Datenuebersicht.jpg>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 10.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 10.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 11.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 11.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 14.
+
+(c:/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 14.
+
+<weatherstation/Empfaengerausrichtung.jpg, id=154, 619.5948pt x 274.1442pt>
+File: weatherstation/Empfaengerausrichtung.jpg Graphic file (type jpg)
+
+<use weatherstation/Empfaengerausrichtung.jpg>
+Package pdftex.def Info: weatherstation/Empfaengerausrichtung.jpg used on input
+ line 20.
+(pdftex.def)             Requested size: 402.73186pt x 178.1916pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 30.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 30.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 30.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 30.
+ [9 <./weatherstation/Empfaengerausrichtung.jpg>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 35.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 35.
+
+Underfull \hbox (badness 2799) in paragraph at lines 47--48
+[]|\OT1/cmr/m/n/10.95 9 ist h[]ochste
+ []
+
+
+Overfull \hbox (11.67038pt too wide) in paragraph at lines 41--58
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--58
+
+ []
+
+
+LaTeX Warning: Reference `fig:detaildatenstruktur' on page 10 undefined on inpu
+t line 61.
+
+)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 45.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 45.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 45.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 45.
+ [10]
 Kapitel 3.
-[9
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 45.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 45.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 46.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 46.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 46.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 46.
+[11
 
 ]
 Kapitel 4.
-[10
-
-] [11
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 46.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 46.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 47.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 47.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 47.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 47.
+[12
 
 ]
-Kapitel 5.
-(./rechtserkl.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--6
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 47.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 47.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 47.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 47.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 47.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 47.
+ [13
+
+] (./rechtserkl.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--9
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9--16
+Underfull \hbox (badness 10000) in paragraph at lines 12--19
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+) (./appendix.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 4.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 4.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 4.
+ [14]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 4.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 4.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 4.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 4.
+ [15
+
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 5.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 5.
+
+Anhang A.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 6.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 6.
+
+Overfull \hbox (5.69046pt too wide) in paragraph at lines 52--52
+[]|[]| 
+ []
+
+
+Overfull \hbox (1.00287pt too wide) in paragraph at lines 52--52
+\OT1/cmr/bx/n/10.95 Aufl[]osung 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Markantes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Markantes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 0=Wahrscheinlichkeit$\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10
+.95 =$50%,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Markantes
+ []
+
+
+Overfull \hbox (4.14406pt too wide) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 0=Wahrscheinlichkeit$\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10
+.95 =$50%,1=$\OML/cmm/m/it/10.95 >$\OT1/cmr/m/n/10.95 50%| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Markantes
+ []
+
+
+Underfull \hbox (badness 3128) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 0=$\OML/cmm/m/it/10.95 <$\OT1/cmr/m/n/10.95 27$[]$C, 1=27
+{31$[]$C, 2=32{40$[]$C,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Markantes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Markantes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 0=Wahrscheinlichkeit$\OML/cmm/m/it/10.95 <\OT1/cmr/m/n/10
+.95 =$50%,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Markantes
+ []
+
+
+Underfull \hbox (badness 3826) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 0=keine In-fo, 1=10mm, 2=50mm,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 Signifikantes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 1=sonnig/klar, 2=leicht bew[]olkt,
+ []
+
+
+Underfull \hbox (badness 4156) in paragraph at lines 52--52
+\OT1/cmr/m/n/10.95 3=vor-wie-gend bew[]olkt, 4=be-deckt,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+\OT1/cmr/m/n/10.95 gen, 10=Re-gen-schau-er, 11=leich-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+\OT1/cmr/m/n/10.95 ter Re-gen, 12=Schnee-schau-er,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
+\OT1/cmr/m/n/10.95 13=Fron-ten-ge-wit-ter, 14=Hoch-ne-
+ []
+
+
+Overfull \hbox (113.83855pt too wide) in paragraph at lines 52--52
+[][] 
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 54.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 54.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 54.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 54.
+[16
+
+]
+Anhang B.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 55.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 55.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 57.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 57.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 57.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 57.
+[17
+
+]
+Anhang C.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 57.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 57.
+(./abbreviations.tex)) (./Bachelorarbeit.bbl
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 1.
+ [18
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 17--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-) (./Bachelorarbeit.bbl [12
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 11--13
 []\OT1/cmr/m/n/10.95 Bayern In-no-va-tiv Ge-sell-schaft f[]ur In-no-va-ti-on un
 d Wis-sen-strans-fer mbH.
  []
 
-) [13
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 53.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 53.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 53.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 53.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 53.
+ [19
 
-] (./Bachelorarbeit.aux) ) 
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 53.
+ (./Bachelorarbeit.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 53.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 53.
+Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
+(rerunfilecheck)             Checksum: DBA8B45B75C051F9FFF4AC7733CFF27F;978.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 53.
+ ) 
 Here is how much of TeX's memory you used:
- 1659 strings out of 493315
- 21292 string characters out of 6141455
- 87591 words of memory out of 5000000
- 5104 multiletter control sequences out of 15000+600000
- 6411 words of font info for 23 fonts, out of 8000000 for 9000
+ 8877 strings out of 493315
+ 129846 string characters out of 6141455
+ 258483 words of memory out of 5000000
+ 12111 multiletter control sequences out of 15000+600000
+ 9455 words of font info for 33 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 25i,4n,27p,1524b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2013/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb><c:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb><c:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c
-:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/
-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Bachelorarbeit.pdf (15 pages, 92868 bytes).
+ 41i,16n,42p,1524b,436s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2013/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2013/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb><c:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><c:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><c:/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Bachelorarbeit.pdf (21 pages, 307515 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
