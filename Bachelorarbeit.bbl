@@ -17,4 +17,16 @@ Nationale Plattform~Elektromobilität (NPE).
 Bayern Innovativ~Gesellschaft für Innovation~und Wissenstransfer~mbH.
 \newblock http://www.elektromobilitaet-verbindet.de/, 1 2014.
 
+\bibitem{ModbusDoc}
+{Modbus Organization, Inc.}
+\newblock {\em MODBUS APPLICATION PROTOCOL SPECIFICATION}.
+\newblock Modbus Organization, Inc., PO Box 628 Hopkinton, MA 01748, v1.1b3
+  edition, April 2012.
+
+\bibitem{Kuveler.2007}
+Gerd K{\"u}veler and Dietrich Schwoch.
+\newblock {\em {I}nformatik f{\"u}r {I}ngenieure und {N}aturwissenschaftler}.
+\newblock {V}iewegs {F}achb{\"u}cher der {T}echnik. Vieweg, Braunschweig
+  [u.a.], 5 edition, 2007.
+
 \end{thebibliography}

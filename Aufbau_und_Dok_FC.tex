@@ -1,0 +1,132 @@
+\section{Geforderte Funktionseigenschaften}
+Die zu schreibende MATLAB Funktion soll nach Fertigstellung in weiteren MATLAB Programmen zum Einsatz kommen. Daher ist es wichtig, dass sämtliche Daten die für das Ausführen erforderlich sind bereits im Code vorliegen und nicht importiert werden müssen. Es sollen auch sonst nach dem Ausführen keine weiteren Maßnahmen oder Eingaben getätigt werden müssen. Um diese Voraussetzungen zu erfüllen müssen vor allem große Datensätze im Code eingebunden werden.\label{createstruct} Bei dieser Arbeit ist das zum einen die Städteliste mit ihren über 1000 Einträgen und zum anderen das Verzeichnis mit allen Registeradressen, in Summe über 340 Positionen. Daneben gibt es noch ein paar weitere Eigenschaften, die an dieser Stelle kurz aufgeführt werden.
+\begin{itemize}
+\item wiederholte Ausführung des Datenabrufs in bestimmten Zeitabschnitten ohne dabei MATLAB komplett zu blockieren
+\item Handhabung der kompletten MODBUS Kommunikation, insbesondere des Datenabrufs, der -verarbeitung und der Parametersetzung
+\item Interpolation der ausgelesenen Werte, um unterschiedliche zeitliche Auflösungen zu erhalten
+\item Datensicherung derart, dass jeder Datenabruf in einer eigenen Datei und die Summe aller abgerufenen Werte in einer anderen Datei gespeichert werden
+\item Fehlervermeidung bei der Eingabe von Inputparametern
+\item Aufbau und Beendigung der seriellen Schnittstelle mit der Wetterstation
+\item einfache und kurze Inputparameter
+\end{itemize}
+Nachdem die Eigenschaften nun bekannt sind, soll in den nachfolgenden Unterkapiteln die genaue Umsetzung im Programmcode erläutert werden. Hierzu wird zunächst eine grobe Struktur des Programmaufbaus in Abbildung \textbf{\ref{fig:flowchart}} gegeben. 
+\begin{figure}
+\centering
+\includegraphics[scale=1]{programm/flowchart}
+\caption{Ablaufplan der Funktion forecast\_data}
+\label{fig:flowchart}
+\end{figure} 
+Wie in der Abbildung zu erkennen, ist es möglich für die Funktion forecast\_data sieben Eingabeparameter zu definieren. 
+\begin{enumerate}
+\item Wetterregion
+\item Prognosebereichsdefinition
+\item Start des Beobachtungszeitraums
+\item Ende des Beobachtungszeitraums
+\item zeitliche Auflösung
+\item Updateintervall
+\item Pfadangabe des Speicherortes (optional)
+\end{enumerate}
+Die Wetterregion wird als Stadtname in Stringformat übergeben. Die Prognosebereichsdefinition besteht aus drei Teilen, die als String in dieser Format 'Prognosebereich-Prognosedetail-Prognoseintervall' aufgebaut ist. Der erste Teil gibt den Wetterbereich an. Hier stehen alle Einträge in der Spalte Prognosebereich der Tabelle \ref{tab:detaildatenstruktur} im Anhang zur Verfügung. Die Prognosedetaildaten können der zweiten Spalte dieser Tabelle entnommen werden. Der dritte Parameter gibt die Anzahl der auszuwertenden Tage an, dabei steht der Wert 1 für den aktuellen Tag ohne Prognose und die Werte 2, 3, 4 für eine entsprechende Erweiterung des aktuellen Tages um die Prognosetage 1, 2 und 3 sofern vorhanden. Möchte man keine gesonderte Auswahl treffen und einfach alle möglichen Daten abrufen, so kann hier an dieser Stelle der Input 'all' erfolgen. Der Beobachtungszeitraum wird durch zwei Daten begrenzt, die ebenfalls als String in dieser Formation 'dd-mmm-yyyy', wobei mit mmm der englische Monatsname gemeint ist, angegeben werden. Die zeitliche Auflösung wird als Double eingetragen. Hier sind die Werte 1, 0.5, 0.25, 0.08 stellvertretend stehend für 1 Stunde, eine halbe Stunde, eine viertel Stunde und 5 Min., möglich. Ebenso als Double wir das Updateintervall definiert. Hier stehen die Werte 6, 12, 24 zur Verfügung, welches einem vier-, zwei- und einmaligen Update am Tag entspricht. Die Pfadangabe wird wiederum als String eingegeben. Die nächste Abbildung gibt hierzu ein Beispiel. Es wird für die Region München die Niederschlagsmenge für den heutigen und ersten Folgetag, die minimale Temperatur für den heutigen und die beiden nachfolgenden Tage, über einen Zeitraum von zwei Tagen abgerufen. Dabei beträgt die zeitliche Auflösung 1 Stunde und das Intervall in denen Updates gestartet werden 6 Stunden. Nachdem hier kein Speicherpfad angegeben ist, wird ein Ordner mit der Bezeichnung \enquote{Aufzeichnungen} im aktuellen MATLAB Ordner erstellt und als Speicherort ausgewählt. 
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{programm/funkaufruf}
+\caption{Beispiel für den Funktionsaufruf}
+\label{fig:funkaufruf}
+\end{figure} 
+\section{Vorbereitende Maßnahmen}
+\subsection{Zuweisung variabler Inputparameter und Variableninitiierung}
+\lstinputlisting[firstline=69, lastline=124]{programm/forecastdata.m}
+Für den Fall, dass variable Inputparameter übergeben wurden, wird zuerst geprüft, ob die Anzahl der geforderten Werte vorhanden ist. Ist das nicht der Fall, so wird eine Meldung an den Nutzer ausgeben und die Funktion beendet. Stimmt die Anzahl, werden die Werte Funktionsvariablen zugeordent. Ist zudem noch eine Pfadangabe zu einem Speicherort der Funktion übergeben worden, so wird diese ebenfalls einer Funktionsvariablen zugewiesen. Wurde keine Angabe hierzu gemacht, so wird im aktuellen MATLAB Ordner ein Ordner \enquote{Aufzeichnungen} als Speicherplatz definiert. Dabei wird nachgesehen, ob lediglich eine Laufwerksangabe vorliegt oder nicht. Existiert der Ordner bereits, erfolgt eine Meldung auf deutsch. Wurden keine variablen Parameter übergeben, so wird die zeitliche Auflösung auf 1 Stunde festgesetzt und ebenfalls ein Speicherort vorgegeben. Nachdem die \textit{forecast\_defintion} sowohl als String als auch als Cell-Array übergeben wird, im späteren Programmablauf aber nur ein Cell-Array erwartet wird, muss noch eine Konvertierung stattfinden.\label{sendloop}Mit dem ersten Funktionsaufruf, an dem noch kein Tageswechsel auftreten kann, werden die Variablen \textit{daychange\_flag} und \textit{daychange\_counter} auf Null gesetzt und dem Base-Workspace zugewiesen. Ebenso initialisiert werden die späteren Datencontainer \textit{weather\_data} und \textit{new\_data}. Wie in Tabelle \ref{tab:parabel} gezeigt, lautet die Slave-ID der Wetterstation \enquote{03}. Diese wird hier der \textit{device\_id} zugeordnet.    
+\subsection{Aufbau von Strukturen}
+\lstinputlisting[firstline=128, lastline=141]{programm/forecastdata.m} 
+Wie bereits im vorigen Kapitel~\ref{createstruct} angekündigt, müssen große Datensätze in Strukturen gepackt werden um später aus ihnen Daten zu gewinnen. Sollen alle Wetterdaten abgerufen werden, ist es erforderlich ein Cell-Array aufzubauen, welches alle Wetterdatenanfragen beinhaltet. Danach werden Strukturen angelegt, die die Registeradressen und Städtenamen abbilden. Die letzten beiden Strukturen müssen wieder im Base-Workspace verfügbar sein da andere Funktionen auf sie zurückgreifen werden.
+\subsection{Überprüfung der Eingabeparameter}
+\lstinputlisting[firstline=145, lastline=169]{programm/forecastdata.m}
+Diese for-Schleife bearbeitet alle übergebenen Wetterdatenanfragen, prüft sie auf Gültigkeit und erstellt zugleich die entsprechenden Datencontainer. Die Datencontainer werden im Base-Workspace eingetragen. Sind ein oder mehrere Eingabeparameter falsch, werden diese dem Nutzer mit einer Nachricht angezeigt und die Funktion beendet.
+\lstinputlisting[firstline=1, lastline=1]{programm/inputcheck.m}
+Die Funktion \textsf{input\_check} liefert als Outputparameter einen Vektor der angibt, welche Parameter gültig sind. Zusätzlich werden die generierten Fehlermeldungen, die ID der Wetterregion, der Breitengrad und Längengrad ausgegeben. 
+\lstinputlisting[firstline=4, lastline=16]{programm/inputcheck.m}
+Im ersten Abschnitt des Input Checks wird die Funktion \textsf{get\_city\_id} aufgerufen, um die ID der Wetterregion, den Längen- und Breitengrad zu ermitteln. Ist die ID nicht in der Liste zu finden, wird die entsprechende Vektorposition \textit{val\_inpt} auf false gesetzt.  
+\lstinputlisting[firstline=1, lastline=18]{programm/getcityid.m}
+In dieser Funktion muss zuerst die im Base-Workspace befindliche Variable \textit{city\_list} zugänglich gemacht werden. Danach wird die Spalte mit den Städtenamen mit \textsf{nominal} konvertiert, um im darauffolgenden Schritt eine einfache Suche der Position in der Liste zu starten, die dem Städtenamen entspricht. In der Variable \textit{city\_data\_set} sind nun alle Werte dieser Liste, die der Position entsprechen, enthalten. Eine einfache Wenn-Dann-Bedingung weist die Daten den Outputparametern zu.   
+\lstinputlisting[firstline=19, lastline=62]{programm/inputcheck.m}
+An dieser Stelle wird die Wetterdatenanfrage analysiert. Kommt in dem Ausdruck nicht zweimal ein Querstrich vor, ist die Eingabe schon fehlerhaft. Wenn doch, werden die drei einzelnen Bestandteile mit Listen abgeglichen und bei entsprechender Existenz keine Fehlermeldung ausgegeben.  
+\lstinputlisting[firstline=65, lastline=103]{programm/inputcheck.m}
+Die Überprüfung des Observationszeitraums erfolgt dahingehen, dass der Ausdruck ein Datumsformat darstellen muss, den MATLAB mittels \textsf{datenum} konvertieren kann. Ist dies nicht möglich, liegt ein Fehler vor. Sind die Datumsformate korrekt, so kann es immer noch der Fall sein, dass das Startdatum in der Vergangenheit oder vor dem Enddatum liegt. Auch hier werden entsprechende Fehlermeldungen generiert.
+\lstinputlisting[firstline=105, lastline=132]{programm/inputcheck.m}
+Im letzten Teil der Überprüfung werden die Werte der zeitlichen Auflösung und des Updateintervalls wieder mit Listen abgeglichen. Ist der Gültigkeitsvektor in der boolschen Überprüfung wahr, werden keine Fehlermeldungen ausgegeben. Andernfalls wenn weniger als 10 Fehlermeldungen angefallen sind, muss der letzte Vektoreintrag der Fehlermeldungen leer sein. Dies ist erforderlich, um den nachfolgenden Print-Befehl ausführen zu können. 
+\subsection{Verfügbarkeitsprüfung der seriellen Schnittstelle}   
+\lstinputlisting[firstline=173, lastline=189]{programm/forecastdata.m} 
+Existiert bereits eine Variable \textit{serial\_interface} im Base-Workspace, so wird diese gelöscht. Zudem werden alle anderen seriellen Schnittstellen gelöscht um zu vermeiden, dass bereits eine andere serielle Schnittstelle den COM6 Port belegt hat. Danach wird die Verfügbarkeit des COM6 Ports festgestellt. Ist dies nicht der Fall, wird eine Fehlermeldung an den Nutzer ausgegeben und die Funktion beendet.
+\section{Aufbau der seriellen Schnittstelle}
+\lstinputlisting[firstline=191, lastline=192]{programm/forecastdata.m}
+Die Funktion \textsf{open\_serial\_port} enthält bereits alle in der Tabelle \ref{tab:parabel} auf Seite~\pageref{coilabfrage} festgelegten Schnittstellenparameter.
+\lstinputlisting[firstline=1, lastline=17]{programm/openserialport.m}
+MATLAB bietet für den Aufbau einer seriellen Schnittstelle eine Funktion namens \textsf{serial} an. Diese wird hier zur Erstellung der Variable \textit{serial\_interface} angewandt. Die Variable wird dem Base-Workspace zugewiesen und die serielle Schnittstelle mit dem Befehl \textsf{fopen} geöffnet. Der Nutzer wird über den Schnittstellenaufbau informiert.
+\section{Abgleich der Wetterregion im Register}
+\lstinputlisting[firstline=195, lastline=221]{programm/forecastdata.m}
+Da der Wechsel einer Wetterregion unter Umständen bis zu drei Tagen dauern kann, bis alle anliegenden Werte Gültigkeit besitzen, wird in diesem Teil des Codes zuerst die bereits eingetragene Stadt-ID ausgelesen und mit der in dem Funktionsaufruf Angegebenen verglichen. Weichen die beiden Werte voneinander ab, so wird der Nutzer per Tastatureingabe aufgefordert dem Wetterregionenwechsel zuzustimmen. Er hat somit die Gelegenheit einen versehentlichen Wechsel abzubrechen. Anschließend wird der neue Wert im Register eingetragen. 
+\section{Festlegung der Timerparameter und Starten des Timers}
+\lstinputlisting[firstline=226, lastline=263]{programm/forecastdata.m}
+Um die Eigenschaft des wiederholten Datenabrufs zu implementieren wurde das Timer-Objekt von MATLAB implementiert. Es bietet den Vorteil im Hintergrund zu laufen ohne dabei MATLAB komplett zu blockieren. Für die Initialisierung dieses Objekts müssen zuerst ein paar Parameter ermittelt werden. Insbesondere betrifft dies das Timerintervall, die Anzahl der Timerausführungen und die Timerverzögerung. Das Timerintervall lässt sich einfach dadurch berechnen indem die Variable \textit{update\_interval} mit der Anzahl an Sekunden für eine Stunde multipliziert wird. Die Anzahl der Timerausführungen ergibt sich dann durch die zur Verfügung stehenden Stunden im Beobachtungszeitraum dividiert durch die Länge des Timerintervalls. Liegt der Beobachtungszeitraum in der Zukunft, so muss die Timerverzögerung genau die Länge vom Funktionsaufruf bis zum Startdatum aufweisen. Bei der Berechnung dieser Angaben sind die MATLAB Funktionen \textsf{days365}, \textsf{datevec} sowie \textsf{etime} äußerst nützlich.
+\lstinputlisting[firstline=270, lastline=282]{programm/forecastdata.m}    
+Mit der Zuweisung \enquote{t = timer} wird in der Variablen \textit{t} das Timer-Objekt erzeugt. Die Eigenschaften können dann ähnlich einer Struktur in MATLAB aufgerufen und bestimmt werden. Zu bestimmen sind die Timerverzögerung (\textit{t.StartDelay}), das Timerintervall (\textit{t.Period}), die Timerausführungen (\textit{t.TasksToExecute}), sowie die Ausführungsmethode (\textit{t.ExecutionMode}). Die Ausführungsmethode \enquote{fixedRate} garantiert, dass in genau gleichen Timerintervallen die in der Timerfunktion (\textit{t.TimerFcn}) definierte Funktion ausgeführt wird. Wird der Timer durch einen Fehler oder durch einen Abbruchbefehl unterbrochen, so legt man in der Timerstopfunktion fest, was geschehen soll.
+\lstinputlisting[firstline=1, lastline=19]{programm/stoptimer.m}  
+Kommt es zu einem Timerabbruch, so wird eine Meldung an den Nutzer ausgegeben, das Timer-Objekt gelöscht und der Datencontainer mit den fortlaufenden Werten abgespeichert. Außerdem wird die serielle Schnittstelle beendet. Der Dateiname für den Datencontainer setzt sich zusammen aus der Wetterregion, der angewandten zeitlichen Auflösung, dem aktuellen Datum und dem aktuellen Datum in Unix Zeitformat.    
+\section{Abschicken der MODBUS-Anfragen}
+\lstinputlisting[firstline=1, lastline=2]{programm/sendloop.m}
+Die Funktion, die das sequentielle Abschicken und Verarbeiten der einzelnen MODBUS Nachrichten übernimmt wird hier erläutert.
+\lstinputlisting[firstline=5, lastline=35]{programm/sendloop.m}
+Nachdem die Eingabeparameter übergeben wurden, werden die im Base-Workspace vorhandenen Variablen \textit{daychange\_flag}, \textit{daychange\_counter}  sowie der Datencontainer \textit{w\_dat} für die Langzeitarchivierung in dieser Funktion bereitgestellt. Eine for-Schleife durchläuft dann alle Wetterdatenanfragen die in \textit{fc\_def} definiert wurden. Beim ersten Durchlauf muss geprüft werden, ob bereits zu einem früheren Zeitpunkt Daten ausgelesen wurden damit ein Tageswechsel signalisiert werden kann. Hierzu wird der letzte Zeitstempel des letzten Datenabrufs, sofern vorhanden, mit dem aktuellen Datum verglichen. Ist das Ergebnis ungleich Null, liegt ein Tageswechsel vor und die Variablen werden entsprechend angepasst und im Base-Workspace aktualisiert.
+\lstinputlisting[firstline=38, lastline=94]{programm/sendloop.m}
+Im nächsten Schritt wird das Intervall für die auszulesenden Wetterdaten zusammengestellt. Hierbei muss unterschieden werden zwischen den stündlichen Werten der mittleren Lufttemperatur, dem begrenzten Prognosehorizont von Luftdruck und Solarleistung und den verbleibenden Daten. Gibt der Nutzer eine zu hohe Zahl für Luftdruck oder Solarleistung ein, so wird auf die möglichen Werte angepasst und eine Warnung ausgegeben.
+\lstinputlisting[firstline=95, lastline=111]{programm/sendloop.m}
+In diesem Abschnitt wird die MODBUS Nachricht erstellt und einer Funktion übergeben, die das Schreiben und Lesen auf der seriellen Schnittstelle übernimmt. Die Startadresse des Registers ergibt sich aus dem Prognosebereich, dem Prognosedetail und dem Anfangszeitpunkt zu dem die Werte ausgelesen werden sollen. Die Endadresse wir im gleichen Verfahren ermittelt. Die Differenz aus den beiden Adressdaten ergibt die Registeranzahl. Gemäß der MODBUS Spezifikation liegen nun alle Daten vor, die zur Kommunikation notwendig sind. Lediglich der Cyclic Redundancy Check fehlt noch. Dieser wird in der Funktion \textsf{gen\_msg} erstellt und der PDU zusammen mit der Slave-ID angeheftet. Wie die momentane Verbindungsqualität zum Zeitpunkt der Anfrage ist, wird kurz darauf abgerufen. Alle für die weitere Verarbeitung erforderlichen Daten werden nun an die Funktion \textsf{send\_and\_receive\_data} übergeben. 
+\lstinputlisting[firstline=112, lastline=131]{programm/sendloop.m}
+Ist die for-Schleife durchlaufen und alle Daten liegen in den Datencontainern, wird der vollzogene Abruf in dem Container \textit{new\_data} mit entsprechendem Dateinamen abgespeichert. Der Dateiname setzt sich dabei aus dem Pfad zum Speicherort, dem Stadtnamen, der gewünschten Auflösung, dem aktuellen Datum und einem Datum in Unix Zeitformat zusammen. Ist das Speichern abgeschlossen, wird der Datencontainer geleert und neu initialisiert. Der letzte Schritt in diesem Programmteil ist das Update der noch verbleibenden Anzahl an Datenabrufen, welche in der Variable \textit{u\_c\_n} (update cycle number) hinterlegt sind.
+\section{Senden und Empfangen}
+\lstinputlisting[firstline=1, lastline=31]{programm/sendandreceivedata.m}
+In dem Funktionsworkspace der Funktion \textsf{send\_and\_receive\_data} muss die serielle Schnittstelle zugänglich sein. Um die in der Funktion \textsf{send\_loop} generierte Nachricht über die Schnittstelle abschicken zu können, muss sie auf ein geeignetes Format gebracht werden. Dann erst kann die Nachricht mit dem Befehl \textit{fwrite} übermittelt werden. Es wird 1 Sekunde auf die Antwort gewartet. Das bestimmen der empfangenen Bytes und die Angabe beim Lesebefehl \textsf{fread} beschleunigt die Kommunikation enorm. Jetzt liegt die Antwortnachricht des Servers in der Variablen \textit{rx\_data} vor. Die darin enthaltenen Werte wurden als unsigned integer 8 bit empfangen.      
+\lstinputlisting[firstline=1, lastline=31]{programm/formatmodbusmsg.m}
+Die Funktion \textsf{format\_modbus\_msg} transformiert den String der MODBUS-Nachricht in einen 8-zeiligen Vektor mit dezimalen Werten die den hexadezimalen Werten des Strings entsprechen. 
+\section{Rx-Datenverarbeitung}
+
+\section{Datenverarbeitung}
+        
+   
+\begin{table}[t]  
+\begin{center}
+\rowcolors{1}{cyan}{white}
+{
+\setlength{\extrarowheight}{0.1cm}
+\begin{tabular}[t]{| l | l | p{1.7cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} |}
+\cline{1-6}
+\rowcolor{cyan} &  & \multicolumn{4}{  c | }{\textbf{Prognoseintervalle}} \\ \cline{3-6}
+\cline{1-6}
+\multicolumn{1}{ |l| }{\multirow{2}{*}{\textbf{Prognosebereich}}} & \multicolumn{1}{ |l| }{\multirow{2}{*}{\textbf{\parbox[t]{1.8cm}{Update-\\zeitpunkt}}}} & \textbf{00:00:00-05:59:59} & \textbf{06:00:00-11:59:59} & \textbf{12:00:00-17:59:59} & \textbf{18:00:00-23:59:59} \\[0.3cm]
+\cline{1-6} \cline{1-6}
+\hiderowcolors
+Temperatur Min. in $^\circ$C & 17.01.2014 03:26 Uhr & \cellcolor{green!25}1 & 3 & 3 & 1 \\
+ & 17.01.2014 09:26 Uhr & \cellcolor{red!25}2 & \cellcolor{green!25}3 & 3 & 2 \\
+ & 17.01.2014 15:26 Uhr & \cellcolor{red!25}3 & \cellcolor{green!25}3 & \cellcolor{green!25}3 & 2 \\
+ & 17.01.2014 21:26 Uhr & \cellcolor{red!25}3 & \cellcolor{green!25}3 & \cellcolor{red!25}2 & \cellcolor{green!25}1 \\
+ & 18.01.2014 03:26 Uhr & 1 & 1 & 4 & 1 \\
+ & 18.01.2014 09:26 Uhr & -1 & 0 & 4 & 1 \\
+ & 18.01.2014 15:26 Uhr & -2 & -2 & 3 & 1 \\
+ & 18.01.2014 21:26 Uhr & -2 & -2 & 1 & 0 \\ \hline
+ Luftdruck in hPa & 17.01.2014 03:26 Uhr & \cellcolor{green!25}1007 & 1005 & 1005 & 1006 \\
+ & 17.01.2014 09:26 Uhr & \cellcolor{green!25}1007 & \cellcolor{green!25}1006 & 1004 & 1005 \\
+ & 17.01.2014 15:26 Uhr & \cellcolor{green!25}1007 & \cellcolor{green!25}1006 & \cellcolor{green!25}1005 & 1006 \\
+ & 17.01.2014 21:26 Uhr & \cellcolor{green!25}1007 & \cellcolor{green!25}1006 & \cellcolor{green!25}1005 & \cellcolor{green!25}1007 \\
+ & 18.01.2014 03:26 Uhr & 1007 & 1004 & 1001 & 1001 \\
+ & 18.01.2014 09:26 Uhr & 1007 & 1004 & 1000 & 1000 \\
+ & 18.01.2014 15:26 Uhr & 1007 & 1004 & 1001 & 1001 \\
+ & 18.01.2014 21:26 Uhr & 1007 & 1004 & 1001 & 1001 \\
+\hline
+\end{tabular}
+}
+\caption{Datenverlust bei kleinem Updateintervall am Beispiel minimaler Temperatur und Luftdruck}
+\label{tab:datenverlust}
+\end{center}
+\end{table} 
+\section{Funktionsaufbau}

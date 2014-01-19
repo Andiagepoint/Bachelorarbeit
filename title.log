@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/W32TeX) (format=pdflatex 2013.9.26)  16 JAN 2014 11:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/W32TeX) (format=pdflatex 2013.9.26)  20 JAN 2014 21:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -37,8 +37,8 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 2--2
  []
 
 ! Undefined control sequence.
-l.3 \huge
-         {Bachelor's Thesis}\vspace{0.5cm}\\
+l.3 \LARGE
+          {Bachelor's Thesis}\vspace{0.5cm}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -62,10 +62,10 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-<recently read> \Huge 
-                      
-l.4 \Huge
-         {\textbf{Aufbau einer Schnittstelle zwischen MATLAB und einer Wette...
+<recently read> \LARGE 
+                       
+l.4 \LARGE
+          {\textbf{Aufbau einer Schnittstelle zwischen MATLAB und einer Wett...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -292,10 +292,10 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no m in font nullfont!
 ! Undefined control sequence.
-<recently read> \huge 
-                      
-l.9 \huge
-         {\textbf{Lehrstuhl für Energiewirtschaft und Anwendungstechnik\\Te...
+<recently read> \LARGE 
+                       
+l.9 \LARGE
+          {\textbf{Lehrstuhl für Energiewirtschaft und Anwendungstechnik\\T...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -498,11 +498,11 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 11 strings out of 493315
- 174 string characters out of 6141455
+ 10 strings out of 493315
+ 171 string characters out of 6141455
  54158 words of memory out of 5000000
- 3563 multiletter control sequences out of 15000+600000
+ 3562 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 13i,1n,10p,214b,120s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 13i,1n,10p,215b,120s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

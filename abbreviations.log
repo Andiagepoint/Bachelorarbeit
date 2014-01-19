@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/W32TeX) (format=pdflatex 2013.9.26)  17 JAN 2014 18:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/W32TeX) (format=pdflatex 2013.9.26)  19 JAN 2014 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -20,7 +20,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.2  \acro
+l.4  \acro
           {NN}{Normal Null Meeresspiegel}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -35,7 +35,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2  \acro{N
+l.4  \acro{N
             N}{Normal Null Meeresspiegel}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -66,7 +66,7 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no l in font nullfont!
 ! Undefined control sequence.
-l.3  \acro
+l.5  \acro
           {hPa}{Hektopascal}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -89,7 +89,7 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 ! Undefined control sequence.
-l.4  \acro
+l.6  \acro
           {Bft}{Beaufort}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -109,7 +109,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.5  \acro
+l.7  \acro
           {mm}{Millimeter}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -130,7 +130,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.6  \acro
+l.8  \acro
           {km}{Kilometer}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -150,7 +150,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 ! Undefined control sequence.
-l.7  \acro
+l.9  \acro
           {h}{Stunde}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -166,8 +166,8 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.8  \acro
-          {C}{Celsius}
+l.10  \acro
+           {C}{Celsius}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -183,8 +183,8 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
-l.9  \acro
-          {N}{Nord}
+l.11  \acro
+           {N}{Nord}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -197,7 +197,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.10  \acro
+l.12  \acro
            {NO}{Nordost}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -215,7 +215,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.11  \acro
+l.13  \acro
            {O}{Osten}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -230,7 +230,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.12  \acro
+l.14  \acro
            {SO}{Suedost}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -248,7 +248,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.13  \acro
+l.15  \acro
            {S}{Sueden}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -264,7 +264,7 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.14  \acro
+l.16  \acro
            {SW}{Suedwest}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -283,7 +283,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.15  \acro
+l.17  \acro
            {W}{Westen}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -299,7 +299,7 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
 ! Undefined control sequence.
-l.16  \acro
+l.18  \acro
            {NW}{Nordwest}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -324,7 +324,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.17 \end{acronym}
+l.19 \end{acronym}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -344,5 +344,5 @@ Here is how much of TeX's memory you used:
  3559 multiletter control sequences out of 15000+600000
  3640 words of font info for 14 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 6i,0n,6p,57b,19s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 6i,0n,6p,57b,21s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

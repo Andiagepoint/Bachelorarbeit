@@ -1,11 +1,17 @@
 \select@language {ngerman}
 \select@language {ngerman}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Einstellungsparameter f\IeC {\"u}r den Kommunikationsaufbau und den Wetterbereich\relax }}{12}{table.caption.6}
+\contentsline {table}{\numberline {1.2}{\ignorespaces Schnittstellenparameterbelegung\relax }}{13}{table.caption.7}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Einstellungsparameter f\IeC {\"u}r den Kommunikationsaufbau und den Wetterbereich \cite [S. 16-17]{HKWDoc}\relax }}{10}{table.caption.6}
+\contentsline {table}{\numberline {2.1}{\ignorespaces \IeC {\"U}bersicht der Registerarten im MODBUS Protokoll\relax }}{16}{table.caption.10}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Aufbau einer lesenden Kommunikation mit einem Coil-Register \relax }}{17}{table.caption.11}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Aufbau einer schreibenden Kommunikation mit einem Holding-Register \relax }}{17}{table.caption.12}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Aufbau einer lesenden Kommunikation mit einem Holding-Register \relax }}{17}{table.caption.13}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Datenverlust bei kleinem Updateintervall am Beispiel minimaler Temperatur und Luftdruck\relax }}{38}{table.caption.16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Detailierte Datenstruktur der Wetterstation\cite [S. 17-26]{HKWDoc}\relax }}{16}{table.caption.9}
+\contentsline {table}{\numberline {A.1}{\ignorespaces Detailierte Datenstruktur der Wetterstation\cite [S. 17-26]{HKWDoc}\relax }}{42}{table.caption.19}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
