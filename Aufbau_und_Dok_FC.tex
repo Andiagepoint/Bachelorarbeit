@@ -90,10 +90,63 @@ In dem Funktionsworkspace der Funktion \textsf{send\_and\_receive\_data} muss di
 \lstinputlisting[firstline=1, lastline=31]{programm/formatmodbusmsg.m}
 Die Funktion \textsf{format\_modbus\_msg} transformiert den String der MODBUS-Nachricht in einen 8-zeiligen Vektor mit dezimalen Werten die den hexadezimalen Werten des Strings entsprechen. 
 \section{Rx-Datenverarbeitung}
+\lstinputlisting[firstline=1, lastline=7]{programm/rxdataprocessing.m}
+Hauptaufgabe der Rx-Datenverarbeitung ist es den empfangenen Funktionscode auszuwerten, die Daten zu isolieren und an eine weitere Funktion zur Bearbeitung zu übergeben. Der rx-Datenstring ist als Zeilenvektor aus einer Reihe von Dezimalzahlen folgendermaßen aufgebaut:
+\begin{itemize}
+\item an erster Stelle kommt die Slave-ID 
+\item an zweiter Stelle folgt der Funktionscode 
+\item an dritter Stelle steht die Anzahl der übertragenen Bytes
+\item an den darauffolgenden Positionen befinden sich die Datenbytes
+\item die beiden letzten Einträge beinhalten den CRC-Wert
+\end{itemize}
+\lstinputlisting[firstline=9, lastline=36]{programm/rxdataprocessing.m}
+Zuerst wird der Funktionscode auf einen Fehlercode hin in der Funktion \textsf{fcod\_check} kontrolliert. Dies ist dann der Fall, wenn er nicht den Wert 1, 3 oder 6 besitzt. Um welchen Ausnahmefall es sich dann handelt, wird in der Switch-Abfrage geklärt und das Programm stoppt mit einem Fehler.  
+\lstinputlisting[firstline=1, lastline=15]{programm/fcodecheck.m}
+Ist der Funktionscode in Ordnung wird entschieden, wie mit den Datenbytes zu verfahren ist. Eine Switch-Abfrage führt zu den entsprechenden Arbeitsschritten. Für den Fall, dass der Funktionscode den Wert 1 oder 6 aufweist, ist die Bearbeitung recht einfach. Es müssen lediglich ein Datenbyte beim Code 1 und zwei Datenbytes beim Code 6 verarbeitet werden.    
+\lstinputlisting[firstline=39, lastline=66]{programm/rxdataprocessing.m}
 
 \section{Datenverarbeitung}
-        
-   
+\lstinputlisting[firstline=1, lastline=1]{programm/dataprocessing.m}
+Das eigentliche Herzstück dieses Programms ist die Datenverarbeitung die mit der Funktion \textsf{data\_processing} gestartet wird. Die notwendigen Parameter sind die empfangen Datenbytes im \textit{data\_string} hinterlegt, die Definition der Wetterdatenabfrage als \textit{fc\_def}, die zeitliche Auflösung in der Variable \textit{res}, die Verbindungsqualität, übergeben als \textit{con\_qual} und die Längen- und Breitengradangabe in Form von \textit{lng} bzw. \textit{lat}. 
+\lstinputlisting[firstline=7, lastline=35]{programm/dataprocessing.m}
+Zunächst werden die Variablen aus dem Base-Workspace geladen, mit denen gearbeitet wird. Danach liefert die Funktion \textsf{MESZ\_calc} ein Flag für die Mitteleuropäische Sommerzeit. Im Anschluß werden die Listen für einen späteren Datenabgleich erstellt.        
+\lstinputlisting[firstline=37, lastline=47]{programm/dataprocessing.m}
+Erfolgt nur eine Abfrage der Kommunikationsparameter oder bestimmter Zustände der Wetterstation, muss nur ein Wert ausgewertet werden. Dies geschieht, wenn die If-Bedingung wahr ist. Da die Daten der seriellen Schnittstelle als unsigned int8 Werte empfangen wurden, werden negative Werte ab der Zahl 32769 dargestellt. Um sie zu erhalten muss der Wertebereich von 2 unsigned Bytes abgezogen werden.  
+\lstinputlisting[firstline=49, lastline=80]{programm/dataprocessing.m}
+Ist die If-Bedingung falsch, handelt es sich um Wetterdaten. Zunächst werden Variablen initiiert. Dabei ist \textit{i} eine Laufvariable, die die Position angibt zu dem ein Datumswechsel stattgefunden hat. \textit{n\_dat\_r} ist die Vektorposition in dem Datencontainer, der jeden einzelnen Datenabruf speichert. Deshalb ist sie immer auf 1 gesetzt. Da die Ausgangsdaten selbst in einer unterschiedlichen Auflösung gegeben sind, müssen mit der Funktion \textsf{res\_factor} auch zwei separate Faktoren für die spätere Interpolation bestimmt werden. Hat ein Abruf bereit zu einem früheren Zeitpunkt stattgefunden, so wird dieser Abruf-Zeitstempel der Variable \textit{t\_rec} zugewiesen. Er bestimmt sich aus dem letzten aufgezeichneten Wert und dessen Rekordstempel. Anschließend wird die Startvariable \textit{sdindex} der nachfolgenden for-Schleife für die zu bearbeitenden Prognosetage bestimmt. Dabei definiert die Position in der entsprechenden Liste diesen Wert. Der Endwert \textit{edindex} der Schleife wird in gleicher Weise bestimmt.   
+\lstinputlisting[firstline=82, lastline=118]{programm/dataprocessing.m}
+Lag noch kein vorheriger Datenabruf vor, so starten die Positionsvektoren des Datencontainers, der die Daten des Beobachtungszeitraums speichert, bei 1. Hier werden zwei Variablen \textit{w\_dat\_r} und \textit{w\_dat\_org} benötigt. Während die Erste später mit der interpolierten zeitlichen Auflösung voranschreitet, behält die Zweite die ursprüngliche Schrittweite. Die while-Schleife bestimmt nun die Position bei einem evtl. Datumswechsel. Dazu wird die in der Variable \textit{unix\_t\_strt} gespeicherte Zeitreihe durchlaufen bis das Datum dem aktuellen Datum entspricht. Der Wert wird der Vektorposition übergeben. Abhängig ob es sich um Daten handelt die interpoliert werden, bekommt auch die Vektorposition für die originalen Daten einen Wert zugewiesen. Er errechnet sich entsprechend der Auflösung der Daten für die mittlere Lufttemperatur (24 Werte pro Tag) multipliziert mit der Zahl der bis dato vollzogenen Tageswechseln plus eins.      
+\lstinputlisting[firstline=120, lastline=184]{programm/dataprocessing.m}
+Handelt es sich um einen längeren Datenstring, so muss dieser durchlaufen werden. Es erfolgt eine Initialisierung dieser Variablen. Danach beginnt die Schleife für den Tagesdurchlauf. Zu Beginn wird je nach Schleifenpostition der Anfangs- und Endwert der Schleife für die Tagessegmente bestimmt. Der hier verwendete Aufbau scheint ein wenig kompliziert zu sein und stammt aus einer Version in der es möglich war völlig willkürliche Intervalle zu bestimmen und nicht nur tagesweise den Abruf zu durchlaufen. Sind Start- und Endwerte für die Tagessegment-Schleife bestimmt, wird im letzten Schritt das Datum der Schleifenposition ermittelt und in der Variablen \textit{date\_part} gespeichert. Diese wird später für die Berechnung der Unix Zeitstempel benötigt.  
+\lstinputlisting[firstline=186, lastline=233]{programm/dataprocessing.m} 
+Es beginnt nun der Schleifendurchlauf für die Tagessegmente. Diesen sind die entsprechenden Wetterdaten zugeordnet, die aus einem High- und Low-Byte zusammengesetzt sind und aus dem Hexadezimal- in das Dezimalformat konvertiert werden müssen. Für die Unix-Zeitstempelberechnung wird ein Datumsvektor benötigt, der in der Funktion \textit{tvector} für die Wetterdaten erstellt wird. Liegt ein Wert von 10000 an, wird eine Warnmeldung an den Nutzer ausgegeben und der komplette Prognosebereich nicht weiter bearbeitet. Die Zeitschritte, die die Zeitreihe bestimmen werden in der nachfolgenden If-Bedingung bestimmt. Dabei ist \textit{timestep} der normale Zeitschritt ohne Interpolation. Für die mittlere Lufttemperatur beträgt sie eine Stunde für die anderen Bereiche 6 Stunden. Der Subtrahend entstammt der Intervalleingrenzung, die auf 00:00:00 Uhr bis 00:59:59 festgelegt wurde. Bei einer Interpolation müssen die Zeitschritte angepasst werden. Bei einer Auflösung von 5 Min. muss z.B. das einstündige Intervall um 55 Min. gekürzt werden. 
+\lstinputlisting[firstline=235, lastline=295]{programm/dataprocessing.m}
+In diesem Abschnitt werden die Werte dem Datencontainer zugewiesen. Dabei werden folgende Variablen belegt:
+\begin{itemize}
+\item \textit{unix\_t\_strt} enthält den Startzeitpunkt in Unix Zeitformat des Intervalls für den der interpolierte Wert später vorliegt
+\item \textit{unix\_t\_end} enthält den Endzeitpunkt in Unix Zeitformat des Intervalls für den der interpolierte Wert später vorliegt
+\item \textit{unix\_t\_mean} enthält den Mittelwert in Unix Zeitformat des Intervalls für den der interpolierte Wert später vorliegt
+\item \textit{interval\_t\_clr} enthält Start- und Endzeitpunkt des Intervalls in normalem Zeitformat
+\item \textit{int\_val} enthält den interpolierten Wetterdatenwert
+\item \textit{org\_val} enthält den nicht interpolierten ausgelesenen Wetterdatenwert
+\item \textit{con\_qual} enthält die Verbindungsqualitätsdaten   
+\end{itemize}
+Die Transformation in das Unixzeitformat übernimmt die Funktion \textsf{date2utc}. Außerdem müssen die Werte der Niederschlagsmenge und der Sonnenscheindauer mit einem eigenen Faktor beaufschlagt werden um die Einheiten l/m² und h zu bekommen. Dies erledigt die Funktion \textsf{data\_mult}.
+Am Schluss eines Schleifendurchlaufs müssen die Vektorpositionen des Datenstrings und der Zeitreihen angepasst bzw. inkrementiert werden.   
+\lstinputlisting[firstline=299, lastline=303]{programm/dataprocessing.m} 
+Für den Fall, dass eine Auflösung von 6 Stunden gewünscht ist, wird nicht interpoliert und die Werte können so im Datencontainer in den Base-Workspace abgelegt werden.
+\lstinputlisting[firstline=305, lastline=313]{programm/dataprocessing.m} 
+Wird eine andere Auflösung als die originale gefordert, so können die Werte, die nicht interpoliert werden gleich im Base-Workspace gespeichert werden.  
+\lstinputlisting[firstline=316, lastline=332]{programm/dataprocessing.m} 
+Für die die Werte der Solarleistung müssen der Sonnenauf- und Sonnenuntergangszeitpunkt bestimmt werden. Tut man dies nicht, so wird später eine Sonnenscheindauer bzw. Globalstrahlung von 0.00 Uhr bis 23.59 Uhr interpoliert. Die Funktion \textsf{diurnal\_var} bestimmt diese Werte mit Hilfe der Längen- und Breitengradangabe der Wetterregion sowie dem entsprechenden Datum. Der Algorithmus zur Berechnung dieser Daten wurde aus dem Buch \enquote{Photovoltaik Engeneering} entnommen \cite{Wagner.2006}. Die Messwerte der Wetterstation werden dann auf vier gleiche Intervalle von Sonnenauf- bis Sonnenuntergang aufgeteilt.     
+\lstinputlisting[firstline=334, lastline=381]{programm/dataprocessing.m}
+Wenn noch kein Datenabruf vorher stattgefunden hat, wird das Ende des Datensatzes durch die Vektorlänge des mittleren Zeitreihenintervalls multipliziert mit dem Faktor festgelegt. Fanden dagegen schon zuvor Datenabfragen statt, dann berechnet sich das Ende durch Addition der neuen interpolierten Werte auf die Position des Datumwechsels. In den darauffolgenden Schritten werden die Intervallstartwerte neu berechnet, indem die alten Intervallgrenzen um die Korrekturfaktoren verschoben werden.       
+\lstinputlisting[firstline=383, lastline=430]{programm/dataprocessing.m}
+Sind die Startpositionen bekannt, können jetzt die kompletten Zeitreihen z.B. mit 5 Min. Schritten erstellt werden.
+\lstinputlisting[firstline=433, lastline=487]{programm/dataprocessing.m}
+In diesem Teil des Programms erfolgt nun die Interpolation der Ausgangswerte. Dabei werden nur die Temperatur, der Luftdruck die Windstärke und die Niederschlagsmenge mit dem \enquote{shape language modeling} \cite{SLM} interpoliert. Für einen erstmaligen Aufruf wird die linke und rechte Steigung des Graphen auf 0 festgelegt. Liegen indes schon Daten vor, so wird die linksseitige Steigung der letzten beiden vorangegangenen Graphenpunkte bestimmt und als Bedingung der \textsf{slm} Funktion für den linkseitigen Steigungswert vorgegeben. Zusätzlich muss der neue Graph mit dem äußerst rechten Graphenwert der vorigen Daten beginnen. So soll ein fließender Übergang der Graphen sichergestellt werden. Für die Daten, die nicht in einer fortlaufenden Zeitreihe gespeichert werden, sind die linken und rechten Steigungen auf 0 gesetzt.   
+\lstinputlisting[firstline=489, lastline=523]{programm/dataprocessing.m} 
+Die übrigen Daten, werden mit einfachen \textsf{spline} Funktionen interpoliert. Dabei wird immer der letzte Wert des vorigen Abrufs mit in die Berechnung einbezogen. Da es bei der Sonnenscheindauer und der Einstrahlung keine negativen Werte geben kann, werden durch die Interpolation generierte negative Werte auf Null gesetzt. Zum Abschluss werden die beiden Datencontainer dem Base-Workspace zugewiesen.    
 \begin{table}[t]  
 \begin{center}
 \rowcolors{1}{cyan}{white}

@@ -26,12 +26,14 @@
 \contentsline {section}{\numberline {3.6}Abschicken der MODBUS-Anfragen}{32}{section.3.6}
 \contentsline {section}{\numberline {3.7}Senden und Empfangen}{36}{section.3.7}
 \contentsline {section}{\numberline {3.8}Rx-Datenverarbeitung}{37}{section.3.8}
-\contentsline {section}{\numberline {3.9}Datenverarbeitung}{37}{section.3.9}
-\contentsline {section}{\numberline {3.10}Funktionsaufbau}{38}{section.3.10}
-\contentsline {chapter}{\numberline {4}Datenanalyse}{39}{chapter.4}
-\contentsline {part}{III\hspace {1em}Zusammenfassung und Ausblick}{40}{part.3}
-\contentsline {chapter}{Anhang}{41}{section*.17}
-\contentsline {chapter}{Anhang}{42}{section*.18}
-\contentsline {chapter}{\numberline {A}Aufbau der Wetterstation}{42}{appendix.A}
-\contentsline {chapter}{\numberline {B}Das MODBUS Protokoll}{43}{appendix.B}
-\contentsline {chapter}{\numberline {C}Abk\IeC {\"u}rzungsverzeichnis}{45}{appendix.C}
+\contentsline {section}{\numberline {3.9}Datenverarbeitung}{39}{section.3.9}
+\contentsline {section}{\numberline {3.10}Funktionsaufbau}{53}{section.3.10}
+\contentsline {chapter}{\numberline {4}Datenanalyse}{54}{chapter.4}
+\contentsline {part}{III\hspace {1em}Schluss}{58}{part.3}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{59}{chapter.5}
+\contentsline {chapter}{Anhang}{60}{section*.22}
+\contentsline {chapter}{Anhang}{61}{section*.23}
+\contentsline {chapter}{\numberline {A}Aufbau der Wetterstation}{61}{appendix.A}
+\contentsline {chapter}{\numberline {B}Das MODBUS Protokoll}{62}{appendix.B}
+\contentsline {chapter}{\numberline {C}Hilfsprogramme}{64}{appendix.C}
+\contentsline {chapter}{\numberline {D}Abk\IeC {\"u}rzungsverzeichnis}{65}{appendix.D}

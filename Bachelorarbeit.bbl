@@ -3,30 +3,61 @@
 \bibitem{HKWDoc}
 {HKW-Elektronik GmbH}.
 \newblock {\em Wetterprognose-Station Kompakt WS-K xx Modbus}.
-\newblock HKW-Elektronik GmbH, Industriestraße 12, D-99846 Seebach/Thur, stand
-  23.11.2012 edition, November 2012.
+\newblock HKW-Elektronik GmbH, Industriestraße 12, D-99846 Seebach/Thur,
+  November 2012.
+\newblock Stand 23.11.2012.
 
 \bibitem{NPE}
 Nationale Plattform~Elektromobilität (NPE).
-\newblock {\em Fortschrittsbericht der Nationalen Plattform Elektromobilität},
-  page~3.
-\newblock Number~3. Gemeinsame Geschäftsstelle Elektromobilität der
-  Bundesregierung (GGEMO), Scharnhorststraße 34–37, 10115 Berlin, 2012.
+\newblock Fortschrittsbericht der nationalen plattform elektromobilität.
+\newblock Website, 2012.
+\newblock Online verfügbar auf
+  \url{http://www.bmu.de/fileadmin/bmu-import/files/pdfs/allgemein/application/pdf/bericht_emob_3_bf.pdf};
+  zuletzt geprüft am 24.01.2014.
 
 \bibitem{SEEV}
 Bayern Innovativ~Gesellschaft für Innovation~und Wissenstransfer~mbH.
-\newblock http://www.elektromobilitaet-verbindet.de/, 1 2014.
-
-\bibitem{ModbusDoc}
-{Modbus Organization, Inc.}
-\newblock {\em MODBUS APPLICATION PROTOCOL SPECIFICATION}.
-\newblock Modbus Organization, Inc., PO Box 628 Hopkinton, MA 01748, v1.1b3
-  edition, April 2012.
+\newblock http://www.elektromobilitaet-verbindet.de/.
+\newblock Website, Januar 2014.
+\newblock Online verfügbar auf
+  \url{http://www.elektromobilitaet-verbindet.de/projekte/energieautarke-elektromobilitaet.html};
+  zuletzt geprüft am 24.01.2014.
 
 \bibitem{Kuveler.2007}
 Gerd K{\"u}veler and Dietrich Schwoch.
 \newblock {\em {I}nformatik f{\"u}r {I}ngenieure und {N}aturwissenschaftler}.
 \newblock {V}iewegs {F}achb{\"u}cher der {T}echnik. Vieweg, Braunschweig
   [u.a.], 5 edition, 2007.
+
+\bibitem{ModbusDoc}
+{Modbus Organization, Inc.}
+\newblock Modbus application protocol specification.
+\newblock Website, April 2012.
+\newblock Online verfügbar auf
+  \url{http://www.modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf};
+  zuletzt geprüft am 24.01.2014.
+
+\bibitem{Schleicher.2008}
+Manfred Schleicher.
+\newblock {\em {D}igitale {S}chnittstellen und {B}ussysteme: {G}rundlagen und
+  praktische {H}inweise zur {A}nbindung von {F}eldger{\"a}ten an
+  {M}{O}{D}-{B}us, {P}{R}{O}{F}{I}{B}{U}{S}-{D}{P}, {E}{T}{H}{E}{R}{N}{E}{T},
+  {C}{A}{N}open und {H}{A}{R}{T}}.
+\newblock JUMO, Fulda, 5 edition, 2008.
+
+\bibitem{Wagner.2006}
+Andreas Wagner.
+\newblock {\em {P}hotovoltaik {E}ngineering: {H}andbuch f{\"u}r {P}lanung,
+  {E}ntwicklung und {A}nwendung}.
+\newblock {V}{D}{I}-{B}uch. Springer-Verlag Berlin Heidelberg, Berlin and
+  Heidelberg, 2 edition, 2006.
+
+\bibitem{SLM}
+John D'Errico.
+\newblock Slm - shape language modeling.
+\newblock Website, Juni 2009.
+\newblock Online verfügbar auf
+  \url{http://www.mathworks.com/matlabcentral/fileexchange/24443-slm-shape-language-modeling};
+  zuletzt geprüft am 06.01.2014.
 
 \end{thebibliography}
