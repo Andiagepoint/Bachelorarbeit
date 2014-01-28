@@ -5,33 +5,41 @@
 \BOOKMARK [1][-]{section.1.2}{Technischer Aufbau der Station}{chapter.1}% 5
 \BOOKMARK [2][-]{subsection.1.2.1}{Senderauswahl und Stationsaufbau}{section.1.2}% 6
 \BOOKMARK [2][-]{subsection.1.2.2}{Registereinteilung und Schnittstellenparametrierung}{section.1.2}% 7
-\BOOKMARK [0][-]{chapter.2}{Das Modbus-Protokoll}{part.2}% 8
-\BOOKMARK [1][-]{section.2.1}{Verbindungstypen}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{Nachrichtenaufbau}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.3}{Registertypen}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.4}{Nachrichtenverarbeitung}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.5}{Funktionscodes}{chapter.2}% 13
-\BOOKMARK [0][-]{chapter.3}{Aufbau und Dokumentation des Funktionscodes}{part.2}% 14
-\BOOKMARK [1][-]{section.3.1}{Geforderte Funktionseigenschaften}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.2}{Vorbereitende Ma\337nahmen}{chapter.3}% 16
-\BOOKMARK [2][-]{subsection.3.2.1}{Zuweisung variabler Inputparameter und Variableninitiierung}{section.3.2}% 17
-\BOOKMARK [2][-]{subsection.3.2.2}{Aufbau von Strukturen}{section.3.2}% 18
-\BOOKMARK [2][-]{subsection.3.2.3}{\334berpr\374fung der Eingabeparameter}{section.3.2}% 19
-\BOOKMARK [2][-]{subsection.3.2.4}{Verf\374gbarkeitspr\374fung der seriellen Schnittstelle}{section.3.2}% 20
-\BOOKMARK [1][-]{section.3.3}{Aufbau der seriellen Schnittstelle}{chapter.3}% 21
-\BOOKMARK [1][-]{section.3.4}{Abgleich der Wetterregion im Register}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.5}{Festlegung der Timerparameter und Starten des Timers}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.6}{Abschicken der MODBUS-Anfragen}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.7}{Senden und Empfangen}{chapter.3}% 25
-\BOOKMARK [1][-]{section.3.8}{Rx-Datenverarbeitung}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.9}{Datenverarbeitung}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.10}{Funktionsaufbau}{chapter.3}% 28
-\BOOKMARK [0][-]{chapter.4}{Datenanalyse}{part.2}% 29
-\BOOKMARK [-1][-]{part.3}{III Schluss}{}% 30
-\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{part.3}% 31
-\BOOKMARK [0][-]{section*.22}{Anhang}{part.3}% 32
-\BOOKMARK [0][-]{section*.23}{Anhang}{part.3}% 33
-\BOOKMARK [0][-]{appendix.A}{Aufbau der Wetterstation}{part.3}% 34
-\BOOKMARK [0][-]{appendix.B}{Das MODBUS Protokoll}{part.3}% 35
-\BOOKMARK [0][-]{appendix.C}{Hilfsprogramme}{part.3}% 36
-\BOOKMARK [0][-]{appendix.D}{Abk\374rzungsverzeichnis}{part.3}% 37
+\BOOKMARK [2][-]{subsection.1.2.3}{Datenabruf}{section.1.2}% 8
+\BOOKMARK [0][-]{chapter.2}{Das Modbus-Protokoll}{part.2}% 9
+\BOOKMARK [1][-]{section.2.1}{Verbindungstypen}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.2}{Nachrichtenaufbau}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Registertypen}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.4}{Nachrichtenverarbeitung}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.5}{Funktions- und Fehlercodes}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.6}{Cyclic Redundancy Check}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.7}{Simulation der Wetterstation}{chapter.2}% 16
+\BOOKMARK [0][-]{chapter.3}{Aufbau und Dokumentation des Programmcodes in MATLAB}{part.2}% 17
+\BOOKMARK [1][-]{section.3.1}{Geforderte Funktionseigenschaften}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.2}{Vorbereitende Ma\337nahmen}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.2.1}{Zuweisung variabler Inputparameter und Variableninitiierung}{section.3.2}% 20
+\BOOKMARK [2][-]{subsection.3.2.2}{Aufbau von Strukturen}{section.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.2.3}{\334berpr\374fung der Eingabeparameter}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.4}{Verf\374gbarkeitspr\374fung der seriellen Schnittstelle}{section.3.2}% 23
+\BOOKMARK [1][-]{section.3.3}{Aufbau der seriellen Schnittstelle}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.4}{Abgleich der Wetterregion im Register}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.5}{Festlegung der Timerparameter und Starten des Timers}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.6}{Abschicken der MODBUS-Anfragen}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.7}{Senden und Empfangen}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.8}{Rx-Datenverarbeitung}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.9}{Datenverarbeitung}{chapter.3}% 30
+\BOOKMARK [1][-]{section.3.10}{Funktionsaufbau}{chapter.3}% 31
+\BOOKMARK [0][-]{chapter.4}{Datenanalyse}{part.2}% 32
+\BOOKMARK [1][-]{section.4.1}{Sonnenscheindauer}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.2}{Globalstrahlung}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.3}{Niederschlagsmenge}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.4}{Windst\344rke}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.5}{Mittlere Lufttemperatur}{chapter.4}% 37
+\BOOKMARK [-1][-]{part.3}{III Schluss}{}% 38
+\BOOKMARK [0][-]{chapter.5}{Zusammenfassung und Ausblick}{part.3}% 39
+\BOOKMARK [0][-]{section*.28}{Anhang}{part.3}% 40
+\BOOKMARK [0][-]{section*.29}{Anhang}{part.3}% 41
+\BOOKMARK [0][-]{appendix.A}{Aufbau der Wetterstation}{part.3}% 42
+\BOOKMARK [0][-]{appendix.B}{Das MODBUS Protokoll}{part.3}% 43
+\BOOKMARK [0][-]{appendix.C}{Hilfsprogramme}{part.3}% 44
+\BOOKMARK [0][-]{appendix.D}{Abk\374rzungsverzeichnis}{part.3}% 45

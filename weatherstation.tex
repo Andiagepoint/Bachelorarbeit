@@ -1,10 +1,10 @@
 \section{Aufbau der Datenstruktur}
-An dieser Stelle der Bachelorarbeit sollen die grundlegenden Eigenschaften der verwendeten Wetterstation dargestellt werden. Eine gute Kenntnis der Datenstruktur sowie der Datenbereitstellung sind eine zwingende Voraussetzung für den späteren Aufbau der MATLAB Funktion. Die nachfolgenden Angaben in diesem Kapitel können der Hardware Spezifikation entnommen werden \cite{HWKDoc} Der Hersteller bietet für die Hardware eine Reihe von Lizenzmodellen an, die den Empfang der Datenmenge bestimmt. Das in dieser Arbeit zum Einsatz kommende Modell nennt sich "{}WS-K RTU485 WPAia T"{} und beinhaltet das Prognosepaket "Premium All inclusive advanced", welches es ermöglicht, das komplette Spektrum an Prognosedaten abzurufen. Welche Wetterinformationen genau zur Verfügung stehen, kann der unten aufgeführten Grafik entnommen werden.
+An dieser Stelle der Bachelorarbeit sollen die grundlegenden Eigenschaften der verwendeten Wetterstation dargestellt werden. Eine gute Kenntnis der Datenstruktur sowie der Datenbereitstellung sind eine zwingende Voraussetzung für den späteren Aufbau der MATLAB Funktion. Die nachfolgenden Angaben in diesem Kapitel können der Hardware Spezifikation entnommen werden \cite{HKWDoc} Der Hersteller bietet für die Hardware eine Reihe von Lizenzmodelle an, die den Empfang der Datenmenge bestimmt. Das in dieser Arbeit zum Einsatz kommende Modell nennt sich "{}WS-K RTU485 WPAia T"{} und beinhaltet das Prognosepaket "Premium All inclusive advanced", welches es ermöglicht, das komplette Spektrum an Prognosedaten abzurufen. Welche Wetterinformationen genau zur Verfügung stehen, kann der unten aufgeführten Abbildung \ref{fig:datenstrukt} entnommen werden.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.65]{weatherstation/Datenuebersicht}
 \caption{Verfuegbare Prognosedaten WS-K RTU485 WPAia}
-\label{fig:1}
+\label{fig:datenstrukt}
 \end{figure}
 Für welche Bereiche diese metereologischen Daten zutreffen muss in der Wetterregion spezifiziert werden. Hier besteht die Möglichkeit für über 1000 Städte in fast ganz Europa die Wetterprognosen abzufragen \cite[S. 27-38]{HKWDoc}. Wie schon in der Einleitung erwähnt, wäre eine niedrige zeitliche Auflösung der Daten wünschenswert, damit das Energiemanagementsystem ohne große Verwerfungen planen kann. Jedoch liegen die meisten Daten in einer Auflösung von 6 Stunden vor, d.h. für ein Intervall von morgens, mittags, nachmittags und abends. Lediglich die mittlere Lufttemperatur wird in einer 1 stündigen Auflösung bereitgestellt. Dieser Umstand wird später im Programmablauf gesondert berücksichtigt. Ein Update der Daten erfolgt ebenfalls alle 6 Stunden. Neben der Auflösung unterscheidet sich auch der Prognosehorizont innerhalb der zugänglichen Daten. Die Spanne reicht von einem bis zu drei Folgetagen. Für den aktuellen Tag, liegen für alle Bereiche Daten vor. Welche metereologische Ausprägung welche Eigenschaften besitzt, kann in der Tabelle \textbf{\ref{tab:detaildatenstruktur}} im Anhang nachvollzogen werden.    
 \section{Technischer Aufbau der Station}
@@ -18,8 +18,8 @@ Die eingesetzte Wetterstation erhält ihre Daten via Langwelle von drei auswähl
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.65]{weatherstation/Empfaengerausrichtung}
-\caption{Standorte der Langwellensender und des Empfängers}
-\label{fig:3}
+\caption{Standorte der Langwellensender und des Empfängers \cite{googleearth}}
+\label{fig:senderlok}
 \end{figure}
 Die Wetterstation soll in München aufgebaut werden. Um einen guten Empfang gewährleisten zu können, muss sie entsprechend ausgerichtet werden. Der Hersteller gibt hierzu Kriterien vor, die beachtet werden sollten:
 \begin{itemize}
@@ -33,7 +33,7 @@ Die Wetterstation soll in München aufgebaut werden. Um einen guten Empfang gew�
 \end{itemize} 
 Unter Berücksichtigung dieser Empfehlungen wurde die Station in Fensternähe in nordwestlicher Richtung aufgebaut und die Sendestation Mainflingen vorgegeben.
 \subsection{Registereinteilung und Schnittstellenparametrierung}
-Wie im vorigen Kapitel bereits erläutert, können über das MODBUS Protokoll vier Arten von Registern angesprochen werden. In der Wetterstation sind zwei Register für die Kommunikation vorgesehen. Im Holdingregister können Einstellungsparameter gesetzt und gelesen werden.\label{comsetreg} Eine Übersicht gibt die oben aufgeführte Tabelle \textbf{\ref{tab:kommeinstpara}}.
+Wie im nachfolgenden Kapitel \enquote{Das MODBUS-Protokoll} noch ausführlicher behandelt, können vier Arten von Registern über die MODBUS Kommunikation angesprochen werden. In der Wetterstation werden zwei dieser Register mit Daten gefüllt sein, die von Interesse sind. In dem sogenannten Holdingregister, das später das bedeutenste sein wird, können Einstellungsparameter gesetzt und gelesen werden.\label{comsetreg} Eine Übersicht gibt die oben aufgeführte Tabelle \textbf{\ref{tab:kommeinstpara}}.
 \begin{table}[t]
 \caption{Einstellungsparameter für den Kommunikationsaufbau und den Wetterbereich}
 \rowcolors{1}{cyan}{white}
@@ -58,8 +58,8 @@ Wie im vorigen Kapitel bereits erläutert, können über das MODBUS Protokoll vi
 }
 \label{tab:kommeinstpara}
 \end{table} 
-Außerdem sind sämtliche metereologischen Daten in diesem Register abgelegt. Eine Auflistung der den Prognosebereichen zugeordneten Registeradressen gibt die im Anhang befindliche Tabelle \ref{tab:detaildatenstruktur}. Es ist dabei zu beachten, dass die Adressen gegenüber den in der Spezifikation des Herstellers Angegebenen, bereits auf die Struktur des Holdingregisters angepasst wurden. D.h. da das Holdingregister mit einer 0 beginnt, wurde von jeder Adresse eine Position abgezogen. Neben dem Holdingregister gibt es noch das Coilregister, in welchem die Zustände für den externen Temperatursensor und die FSK Qualität vorgehalten werden. Die Adressen hierfür sind 1 bzw. 2 und die zugelassenen Werte 1 und 0 geben jeweils den Zustand an. 1 bedeutet der Sensor sowie die FSK Qualität sind in Ordnung.\label{coilabfrage} 
-\begin{wraptable}{r}[0mm]{35mm}
+Außerdem sind sämtliche metereologischen Daten in diesem Register abgelegt. Eine Auflistung der den Prognosebereichen zugeordneten Registeradressen und weitere Informationen gibt die im Anhang befindliche Tabelle \ref{tab:detaildatenstruktur}. Es ist dabei zu beachten, dass die Adressen gegenüber den in der Spezifikation des Herstellers Angegebenen, bereits auf die Struktur des Holdingregisters angepasst wurden. D.h. da das Holdingregister mit einer 0 beginnt, wurde von jeder Adresse eine Position abgezogen. Neben dem Holdingregister gibt es noch das Coilregister, in welchem die Zustände für den externen Temperatursensor und die FSK Qualität vorgehalten werden. Die Adressen hierfür sind 1 bzw. 2, und die zugelassenen Werte 1 und 0 geben jeweils den Zustand an. 1 bedeutet der Sensor sowie die FSK Qualität sind in Ordnung.\label{coilabfrage} 
+\begin{wraptable}[11]{l}{0.3\textwidth}
 \caption{Schnittstellenparameterbelegung}
 \rowcolors{1}{cyan}{white}
 {
@@ -76,7 +76,45 @@ Außerdem sind sämtliche metereologischen Daten in diesem Register abgelegt. Ei
     \label{tab:parabel}
 }
 \end{wraptable}
-Um eine funktionierende MODBUS Kommunikation über eine serielle Schnittstelle aufbauen zu können, müssen bestimmte Schnittstellenparameter beim Empfänger sowie beim Sender identisch sein. Die Baudrate gibt dabei an, wieviele Bits pro Zeiteinheit übertragen werden können \cite[S .169]{Kuveler.2007}. Das Paritätsbit zeigt an, ob im übertragenen Byte ein 1 bit Fehler vorliegt. Dies ist dann der Fall, wenn die Zahl der übertragenen Einsen ungerade ist, jedoch das Paritätsbit (= 0 bei even und 1 bei odd) eine gerade Anzahl anzeigt. Das Kommunikationprotokol erfordert in diesem Fall eine erneute Übertragung der Information \cite[S. 25]{Kuveler.2007}. Das Databit gibt lediglich die Anzahl der zu übertragenden bits pro Codewort an. Das Stopbit, entweder 1 oder 2 bits, wird zur Synchronisierung von Sender und Empfänger benötigt, damit diese wissen, wann ein Codewort beginnt und endet \cite[S. 169-170]{Kuveler.2007}. Per Jumperpositionierung kann die Baudrate von 9600 auf 19200 in der Wetterstation geändert werden, die Werkseinstellung von 19200 wurde aber in dieser Arbeit beibelassen. Ebenso einstellbar über Jumper ist die Slave-Adresse der Wetterstation. Aber auch hier wurde der voreinstellte Wert nicht verändert. Nachdem nun das Modbusprotokoll und die Funktionsweise der Wetterstation bekannt sind, kann mit der Umsetzung der MATLAB Funktion begonnen werden.     
+Um eine funktionierende MODBUS Kommunikation über eine serielle Schnittstelle aufbauen zu können, müssen bestimmte Schnittstellenparameter beim Empfänger sowie beim Sender identisch sein. Die Baudrate gibt dabei an, wieviele Bits pro Zeiteinheit übertragen werden können \cite[S .169]{Kuveler.2007}. Das Paritätsbit zeigt an, ob im übertragenen Byte ein 1 bit Fehler vorliegt. Dies ist dann der Fall, wenn die Zahl der übertragenen Einsen ungerade ist, jedoch das Paritätsbit (= 0 bei even und 1 bei odd) eine gerade Anzahl anzeigt. Das Kommunikationprotokol erfordert in diesem Fall eine erneute Übertragung der Information \cite[S. 25]{Kuveler.2007}. Das Databit gibt lediglich die Anzahl der zu übertragenden bits pro Codewort an. Das Stopbit, entweder 1 oder 2 bits, wird zur Synchronisierung von Sender und Empfänger benötigt, damit diese wissen, wann ein Codewort beginnt und endet \cite[S. 169-170]{Kuveler.2007}. Per Jumperpositionierung kann die Baudrate von 9600 auf 19200 bit/s in der Wetterstation geändert werden. Die Werkseinstellung von 19200 bit/s wurde aber in dieser Arbeit beibelassen. Ebenso einstellbar über Jumper ist die Slave-ID der Wetterstation. Da in einem Bus-Netzwerk mehrere Teilnehmer mit einander verbunden sind, benötigt man einen Identifikationsparamter der Teilnehmer für den Nachrichtenaustausch. Aber auch hier wurde der voreinstellte Wert nicht verändert. Nachdem nun das Modbusprotokoll und die Funktionsweise der Wetterstation bekannt sind, kann mit der Umsetzung der MATLAB Funktion begonnen werden.  
+\subsection{Datenabruf}
+In der Spezifikation des Herstellers steht wörtlich \enquote{Alle Daten werden täglich viermal neu berechnet und übertragen} \cite[S. 4]{HKWDoc}. Die Frage, die sich hierbei stellt ist, werden im Tagesfortlauf auch Daten neu übermittelt, die zeitlich gesehen schon in der Vergangenheit liegen? Nimmt man an, der Abruf erfolgt um 17 Uhr, dann würden gem. der Spezifikation auch die Werte für die Intervalle 0-6 Uhr und 6-12 Uhr neu berechnet und übermittelt werden. Im Telefonat mit Herrn Volkhardt von der Firma HKW GmbH, stellte sich heraus, dass die maximal 4 Updates pro Tag nicht immer das komplette Register erneuern. Dies gilt nur für die Temperatur und markanten Wetterdaten. Für alle anderen Bereiche werden jeweils nur die aktuellen bzw. in Zukunft liegenden Werte übermittelt. Die Tabelle \ref{datenupdate} zeigt dies im Beispiel.
+\begin{table}[t]  
+\begin{center}
+\caption{Beispiel für das Unterschiedliche Datenupdate}
+\rowcolors{1}{cyan}{white}
+{
+\setlength{\extrarowheight}{0.1cm}
+\begin{tabular}[t]{| l | l | p{1.7cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} |}
+\cline{1-6}
+\rowcolor{cyan} &  & \multicolumn{4}{  c | }{\textbf{Prognoseintervalle}} \\ \cline{3-6}
+\cline{1-6}
+\multicolumn{1}{ |l| }{\multirow{2}{*}{\textbf{Prognosebereich}}} & \multicolumn{1}{ |l| }{\multirow{2}{*}{\textbf{\parbox[t]{1.8cm}{Update-\\zeitpunkt}}}} & \textbf{00:00:00-05:59:59} & \textbf{06:00:00-11:59:59} & \textbf{12:00:00-17:59:59} & \textbf{18:00:00-23:59:59} \\[0.3cm]
+\cline{1-6} \cline{1-6}
+\hiderowcolors
+Temperatur Min. in $^\circ$C & 17.01.2014 03:26 Uhr & \cellcolor{green!25}1 & 3 & 3 & 1 \\
+ & 17.01.2014 09:26 Uhr & \cellcolor{red!25}2 & \cellcolor{green!25}3 & 3 & 2 \\
+ & 17.01.2014 15:26 Uhr & \cellcolor{red!25}3 & \cellcolor{green!25}3 & \cellcolor{green!25}3 & 2 \\
+ & 17.01.2014 21:26 Uhr & \cellcolor{red!25}3 & \cellcolor{green!25}3 & \cellcolor{red!25}2 & \cellcolor{green!25}1 \\
+ & 18.01.2014 03:26 Uhr & 1 & 1 & 4 & 1 \\
+ & 18.01.2014 09:26 Uhr & -1 & 0 & 4 & 1 \\
+ & 18.01.2014 15:26 Uhr & -2 & -2 & 3 & 1 \\
+ & 18.01.2014 21:26 Uhr & -2 & -2 & 1 & 0 \\ \hline
+ Luftdruck in hPa & 17.01.2014 03:26 Uhr & \cellcolor{green!25}1007 & 1005 & 1005 & 1006 \\
+ & 17.01.2014 09:26 Uhr & \cellcolor{green!25}1007 & \cellcolor{green!25}1006 & 1004 & 1005 \\
+ & 17.01.2014 15:26 Uhr & \cellcolor{green!25}1007 & \cellcolor{green!25}1006 & \cellcolor{green!25}1005 & 1006 \\
+ & 17.01.2014 21:26 Uhr & \cellcolor{green!25}1007 & \cellcolor{green!25}1006 & \cellcolor{green!25}1005 & \cellcolor{green!25}1007 \\
+ & 18.01.2014 03:26 Uhr & 1007 & 1004 & 1001 & 1001 \\
+ & 18.01.2014 09:26 Uhr & 1007 & 1004 & 1000 & 1000 \\
+ & 18.01.2014 15:26 Uhr & 1007 & 1004 & 1001 & 1001 \\
+ & 18.01.2014 21:26 Uhr & 1007 & 1004 & 1001 & 1001 \\
+\hline
+\end{tabular}
+}
+\label{tab:datenupdate}
+\end{center}
+\end{table} 
+   
 
 
     

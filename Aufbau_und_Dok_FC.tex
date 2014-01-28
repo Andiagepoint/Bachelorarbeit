@@ -1,5 +1,5 @@
 \section{Geforderte Funktionseigenschaften}
-Die zu schreibende MATLAB Funktion soll nach Fertigstellung in weiteren MATLAB Programmen zum Einsatz kommen. Daher ist es wichtig, dass sämtliche Daten die für das Ausführen erforderlich sind bereits im Code vorliegen und nicht importiert werden müssen. Es sollen auch sonst nach dem Ausführen keine weiteren Maßnahmen oder Eingaben getätigt werden müssen. Um diese Voraussetzungen zu erfüllen müssen vor allem große Datensätze im Code eingebunden werden.\label{createstruct} Bei dieser Arbeit ist das zum einen die Städteliste mit ihren über 1000 Einträgen und zum anderen das Verzeichnis mit allen Registeradressen, in Summe über 340 Positionen. Daneben gibt es noch ein paar weitere Eigenschaften, die an dieser Stelle kurz aufgeführt werden.
+Die zu schreibende MATLAB Funktion soll nach Fertigstellung in weiteren MATLAB Programmen zum Einsatz kommen. Daher ist es wichtig, dass sämtliche Daten die für das Ausführen erforderlich sind bereits im Code vorliegen und nicht importiert werden müssen. Es sollen auch sonst nach dem Ausführen keine weiteren Maßnahmen oder Eingaben getätigt werden müssen. Um diesen Voraussetzungen gerecht zu werden, ist es erforderlich vor allem große Datensätze im Code einzubinden.\label{createstruct} Bei dieser Arbeit ist das zum einen die Städteliste mit ihren über 1000 Einträgen und zum anderen das Verzeichnis mit allen Registeradressen, in Summe über 340 Positionen. Daneben gibt es noch ein paar weitere Eigenschaften, die an dieser Stelle kurz aufgeführt werden.
 \begin{itemize}
 \item wiederholte Ausführung des Datenabrufs in bestimmten Zeitabschnitten ohne dabei MATLAB komplett zu blockieren
 \item Handhabung der kompletten MODBUS Kommunikation, insbesondere des Datenabrufs, der -verarbeitung und der Parametersetzung
@@ -16,7 +16,7 @@ Nachdem die Eigenschaften nun bekannt sind, soll in den nachfolgenden Unterkapit
 \caption{Ablaufplan der Funktion forecast\_data}
 \label{fig:flowchart}
 \end{figure} 
-Wie in der Abbildung zu erkennen, ist es möglich für die Funktion forecast\_data sieben Eingabeparameter zu definieren. 
+Wie in der Abbildung \ref{fig:funkaufruf} zu erkennen, ist es möglich für die Funktion \textsf{forecast\_data} sieben Eingabeparameter zu definieren. 
 \begin{enumerate}
 \item Wetterregion
 \item Prognosebereichsdefinition
@@ -26,17 +26,19 @@ Wie in der Abbildung zu erkennen, ist es möglich für die Funktion forecast\_da
 \item Updateintervall
 \item Pfadangabe des Speicherortes (optional)
 \end{enumerate}
-Die Wetterregion wird als Stadtname in Stringformat übergeben. Die Prognosebereichsdefinition besteht aus drei Teilen, die als String in dieser Format 'Prognosebereich-Prognosedetail-Prognoseintervall' aufgebaut ist. Der erste Teil gibt den Wetterbereich an. Hier stehen alle Einträge in der Spalte Prognosebereich der Tabelle \ref{tab:detaildatenstruktur} im Anhang zur Verfügung. Die Prognosedetaildaten können der zweiten Spalte dieser Tabelle entnommen werden. Der dritte Parameter gibt die Anzahl der auszuwertenden Tage an, dabei steht der Wert 1 für den aktuellen Tag ohne Prognose und die Werte 2, 3, 4 für eine entsprechende Erweiterung des aktuellen Tages um die Prognosetage 1, 2 und 3 sofern vorhanden. Möchte man keine gesonderte Auswahl treffen und einfach alle möglichen Daten abrufen, so kann hier an dieser Stelle der Input 'all' erfolgen. Der Beobachtungszeitraum wird durch zwei Daten begrenzt, die ebenfalls als String in dieser Formation 'dd-mmm-yyyy', wobei mit mmm der englische Monatsname gemeint ist, angegeben werden. Die zeitliche Auflösung wird als Double eingetragen. Hier sind die Werte 1, 0.5, 0.25, 0.08 stellvertretend stehend für 1 Stunde, eine halbe Stunde, eine viertel Stunde und 5 Min., möglich. Ebenso als Double wir das Updateintervall definiert. Hier stehen die Werte 6, 12, 24 zur Verfügung, welches einem vier-, zwei- und einmaligen Update am Tag entspricht. Die Pfadangabe wird wiederum als String eingegeben. Die nächste Abbildung gibt hierzu ein Beispiel. Es wird für die Region München die Niederschlagsmenge für den heutigen und ersten Folgetag, die minimale Temperatur für den heutigen und die beiden nachfolgenden Tage, über einen Zeitraum von zwei Tagen abgerufen. Dabei beträgt die zeitliche Auflösung 1 Stunde und das Intervall in denen Updates gestartet werden 6 Stunden. Nachdem hier kein Speicherpfad angegeben ist, wird ein Ordner mit der Bezeichnung \enquote{Aufzeichnungen} im aktuellen MATLAB Ordner erstellt und als Speicherort ausgewählt. 
 \begin{figure}
 \centering
 \includegraphics[scale=0.7]{programm/funkaufruf}
 \caption{Beispiel für den Funktionsaufruf}
 \label{fig:funkaufruf}
-\end{figure} 
+\end{figure}
+Die Wetterregion wird als Stadtname in Stringformat übergeben. Die Prognosebereichsdefinition besteht aus drei Teilen, die als String in diesem Format 'Prognosebereich-Prognosedetail-Prognoseintervall' aufgebaut ist. Der erste Teil gibt den Wetterbereich an. Hier stehen alle Einträge in der Spalte Prognosebereich der Tabelle \ref{tab:detaildatenstruktur} im Anhang zur Verfügung. Die Prognosedetaildaten können der zweiten Spalte dieser Tabelle entnommen werden. Der dritte Parameter gibt die Anzahl der auszuwertenden Tage an, dabei steht der Wert 1 für den aktuellen Tag ohne Prognose und die Werte 2, 3, 4 für eine entsprechende Erweiterung des aktuellen Tages um die Prognosetage 1, 2 und 3 sofern vorhanden. Um mehrere selektive Prognosebereiche abzurufen, gibt es die Möglichkeit diese als Cell-Array zu definieren. Dabei wird das Cell-Array als Zeilenvektor in dieser Form {Prognosebereichsdefinition\_1;Prognosebereichsdefiniton\_2} definiert. Möchte man keine gesonderte Auswahl treffen und einfach alle möglichen Wetterdaten abrufen, so kann hier an dieser Stelle der Input 'all' erfolgen. Der Beobachtungszeitraum wird durch zwei Daten begrenzt, die ebenfalls als String in dieser Formation 'dd-mmm-yyyy', wobei mit mmm der englische Monatsname gemeint ist, angegeben werden. Die zeitliche Auflösung wird als Double eingetragen. Hier sind die Werte 1, 0.5, 0.25, 0.08 stellvertretend stehend für 1 Stunde, eine halbe Stunde, eine viertel Stunde und 5 Min., möglich. Soll keine Interpolation der Daten erfolgen, so trägt man hier den Wert 6 ein. Das Updateintervall wird ebenfalls als Double definiert. Hier stehen die Werte 6, 12, 24 zur Verfügung, welches einem vier-, zwei- und einmaligen Update am Tag entspricht. Die Pfadangabe wird wiederum als String eingegeben. Die Abbildung \ref{fig:funkaufruf} gibt hierzu ein Beispiel. Es wird für die Region München die Niederschlagsmenge für den heutigen und ersten Folgetag, die minimale Temperatur für den heutigen und die beiden nachfolgenden Tage, über einen Zeitraum von zwei Tagen abgerufen. Dabei beträgt die zeitliche Auflösung 1 Stunde und das Intervall in denen Updates gestartet werden 6 Stunden. Nachdem hier kein Speicherpfad angegeben ist, wird ein Ordner mit der Bezeichnung \enquote{Aufzeichnungen} im aktuellen MATLAB Ordner erstellt und als Speicherort ausgewählt. 
 \section{Vorbereitende Maßnahmen}
 \subsection{Zuweisung variabler Inputparameter und Variableninitiierung}
-\lstinputlisting[firstline=69, lastline=124]{programm/forecastdata.m}
-Für den Fall, dass variable Inputparameter übergeben wurden, wird zuerst geprüft, ob die Anzahl der geforderten Werte vorhanden ist. Ist das nicht der Fall, so wird eine Meldung an den Nutzer ausgeben und die Funktion beendet. Stimmt die Anzahl, werden die Werte Funktionsvariablen zugeordent. Ist zudem noch eine Pfadangabe zu einem Speicherort der Funktion übergeben worden, so wird diese ebenfalls einer Funktionsvariablen zugewiesen. Wurde keine Angabe hierzu gemacht, so wird im aktuellen MATLAB Ordner ein Ordner \enquote{Aufzeichnungen} als Speicherplatz definiert. Dabei wird nachgesehen, ob lediglich eine Laufwerksangabe vorliegt oder nicht. Existiert der Ordner bereits, erfolgt eine Meldung auf deutsch. Wurden keine variablen Parameter übergeben, so wird die zeitliche Auflösung auf 1 Stunde festgesetzt und ebenfalls ein Speicherort vorgegeben. Nachdem die \textit{forecast\_defintion} sowohl als String als auch als Cell-Array übergeben wird, im späteren Programmablauf aber nur ein Cell-Array erwartet wird, muss noch eine Konvertierung stattfinden.\label{sendloop}Mit dem ersten Funktionsaufruf, an dem noch kein Tageswechsel auftreten kann, werden die Variablen \textit{daychange\_flag} und \textit{daychange\_counter} auf Null gesetzt und dem Base-Workspace zugewiesen. Ebenso initialisiert werden die späteren Datencontainer \textit{weather\_data} und \textit{new\_data}. Wie in Tabelle \ref{tab:parabel} gezeigt, lautet die Slave-ID der Wetterstation \enquote{03}. Diese wird hier der \textit{device\_id} zugeordnet.    
+Als erstes wird der Default-Ordner \textit{default\_filepath} für das Abspeichern der Daten festgelegt. Dabei wird nachgesehen, ob lediglich eine Laufwerksangabe vorliegt oder nicht. Für den Fall, dass variable Inputparameter übergeben wurden, wird zuerst geprüft, ob die Anzahl der geforderten Werte vorhanden ist. Ist das nicht der Fall, so wird eine Meldung an den Nutzer ausgeben und die Funktion beendet. Stimmt die Anzahl, werden die Werte Funktionsvariablen zugeordent. Möchte man den Zeitpunkt zu dem der erste Datenabruf nach Ausführen der Funktion erfolgt verschieben, so kann man einen zeitlichen Offset als 7tes Inputargument übergeben. Wenn Startzeitpunkt des Beobachtungsintervalls und Funktionsausführung am gleichen Tag liegen, so bewirkt der Offset eine Verschiebung vom Ausführungszeitpunkt der Funktion an. Liegt das Startdatum jedoch in der Zukunft, so findet die Verschiebung von 0.00 Uhr des Startdatum an statt. Ist zudem noch eine Pfadangabe zu einem Speicherort der Funktion übergeben worden, so wird diese ebenfalls einer Funktionsvariablen zugewiesen. Wurden keine Angaben zu den beiden Werten gemacht, so wird im aktuellen MATLAB Ordner der Default-Ordner \enquote{Aufzeichnungen} als Speicherplatz definiert und der Offset auf Null gesetzt. Existiert der Ordner bereits, erfolgt eine Meldung auf deutsch. Wurden keine variablen Parameter übergeben (entspricht einem einmaligen sofortigen Abruf), so wird die zeitliche Auflösung auf 1 Stunde festgesetzt und ebenfalls der Default-Speicherort vorgegeben. 
+\lstinputlisting[firstline=69, lastline=108]{programm/forecastdata.m}
+Nachdem die \textit{forecast\_defintion} sowohl als String als auch als Cell-Array übergeben wird, im späteren Programmablauf aber nur ein Cell-Array erwartet wird, muss noch eine Konvertierung stattfinden.\label{sendloop} Mit dem ersten Funktionsaufruf, an dem noch kein Tageswechsel auftreten kann, werden die Variablen \textit{daychange\_flag} und \textit{daychange\_counter} auf Null gesetzt und dem Base-Workspace zugewiesen. Ebenso initialisiert werden die späteren Datencontainer \textit{weather\_data} und \textit{new\_data}. Wie in Tabelle \ref{tab:parabel} gezeigt, lautet die Slave-ID der Wetterstation \enquote{03}. Diese wird hier der \textit{device\_id} zugeordnet. 
+\lstinputlisting[firstline=110, lastline=127]{programm/forecastdata.m}   
 \subsection{Aufbau von Strukturen}
 \lstinputlisting[firstline=128, lastline=141]{programm/forecastdata.m} 
 Wie bereits im vorigen Kapitel~\ref{createstruct} angekündigt, müssen große Datensätze in Strukturen gepackt werden um später aus ihnen Daten zu gewinnen. Sollen alle Wetterdaten abgerufen werden, ist es erforderlich ein Cell-Array aufzubauen, welches alle Wetterdatenanfragen beinhaltet. Danach werden Strukturen angelegt, die die Registeradressen und Städtenamen abbilden. Die letzten beiden Strukturen müssen wieder im Base-Workspace verfügbar sein da andere Funktionen auf sie zurückgreifen werden.
@@ -147,39 +149,5 @@ Sind die Startpositionen bekannt, können jetzt die kompletten Zeitreihen z.B. m
 In diesem Teil des Programms erfolgt nun die Interpolation der Ausgangswerte. Dabei werden nur die Temperatur, der Luftdruck die Windstärke und die Niederschlagsmenge mit dem \enquote{shape language modeling} \cite{SLM} interpoliert. Für einen erstmaligen Aufruf wird die linke und rechte Steigung des Graphen auf 0 festgelegt. Liegen indes schon Daten vor, so wird die linksseitige Steigung der letzten beiden vorangegangenen Graphenpunkte bestimmt und als Bedingung der \textsf{slm} Funktion für den linkseitigen Steigungswert vorgegeben. Zusätzlich muss der neue Graph mit dem äußerst rechten Graphenwert der vorigen Daten beginnen. So soll ein fließender Übergang der Graphen sichergestellt werden. Für die Daten, die nicht in einer fortlaufenden Zeitreihe gespeichert werden, sind die linken und rechten Steigungen auf 0 gesetzt.   
 \lstinputlisting[firstline=489, lastline=523]{programm/dataprocessing.m} 
 Die übrigen Daten, werden mit einfachen \textsf{spline} Funktionen interpoliert. Dabei wird immer der letzte Wert des vorigen Abrufs mit in die Berechnung einbezogen. Da es bei der Sonnenscheindauer und der Einstrahlung keine negativen Werte geben kann, werden durch die Interpolation generierte negative Werte auf Null gesetzt. Zum Abschluss werden die beiden Datencontainer dem Base-Workspace zugewiesen.    
-\begin{table}[t]  
-\begin{center}
-\rowcolors{1}{cyan}{white}
-{
-\setlength{\extrarowheight}{0.1cm}
-\begin{tabular}[t]{| l | l | p{1.7cm} | p{1.7cm} | p{1.7cm} | p{1.7cm} |}
-\cline{1-6}
-\rowcolor{cyan} &  & \multicolumn{4}{  c | }{\textbf{Prognoseintervalle}} \\ \cline{3-6}
-\cline{1-6}
-\multicolumn{1}{ |l| }{\multirow{2}{*}{\textbf{Prognosebereich}}} & \multicolumn{1}{ |l| }{\multirow{2}{*}{\textbf{\parbox[t]{1.8cm}{Update-\\zeitpunkt}}}} & \textbf{00:00:00-05:59:59} & \textbf{06:00:00-11:59:59} & \textbf{12:00:00-17:59:59} & \textbf{18:00:00-23:59:59} \\[0.3cm]
-\cline{1-6} \cline{1-6}
-\hiderowcolors
-Temperatur Min. in $^\circ$C & 17.01.2014 03:26 Uhr & \cellcolor{green!25}1 & 3 & 3 & 1 \\
- & 17.01.2014 09:26 Uhr & \cellcolor{red!25}2 & \cellcolor{green!25}3 & 3 & 2 \\
- & 17.01.2014 15:26 Uhr & \cellcolor{red!25}3 & \cellcolor{green!25}3 & \cellcolor{green!25}3 & 2 \\
- & 17.01.2014 21:26 Uhr & \cellcolor{red!25}3 & \cellcolor{green!25}3 & \cellcolor{red!25}2 & \cellcolor{green!25}1 \\
- & 18.01.2014 03:26 Uhr & 1 & 1 & 4 & 1 \\
- & 18.01.2014 09:26 Uhr & -1 & 0 & 4 & 1 \\
- & 18.01.2014 15:26 Uhr & -2 & -2 & 3 & 1 \\
- & 18.01.2014 21:26 Uhr & -2 & -2 & 1 & 0 \\ \hline
- Luftdruck in hPa & 17.01.2014 03:26 Uhr & \cellcolor{green!25}1007 & 1005 & 1005 & 1006 \\
- & 17.01.2014 09:26 Uhr & \cellcolor{green!25}1007 & \cellcolor{green!25}1006 & 1004 & 1005 \\
- & 17.01.2014 15:26 Uhr & \cellcolor{green!25}1007 & \cellcolor{green!25}1006 & \cellcolor{green!25}1005 & 1006 \\
- & 17.01.2014 21:26 Uhr & \cellcolor{green!25}1007 & \cellcolor{green!25}1006 & \cellcolor{green!25}1005 & \cellcolor{green!25}1007 \\
- & 18.01.2014 03:26 Uhr & 1007 & 1004 & 1001 & 1001 \\
- & 18.01.2014 09:26 Uhr & 1007 & 1004 & 1000 & 1000 \\
- & 18.01.2014 15:26 Uhr & 1007 & 1004 & 1001 & 1001 \\
- & 18.01.2014 21:26 Uhr & 1007 & 1004 & 1001 & 1001 \\
-\hline
-\end{tabular}
-}
-\caption{Datenverlust bei kleinem Updateintervall am Beispiel minimaler Temperatur und Luftdruck}
-\label{tab:datenverlust}
-\end{center}
-\end{table} 
+
 \section{Funktionsaufbau}

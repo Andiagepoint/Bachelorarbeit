@@ -7,33 +7,41 @@
 \contentsline {section}{\numberline {1.2}Technischer Aufbau der Station}{11}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Senderauswahl und Stationsaufbau}{11}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Registereinteilung und Schnittstellenparametrierung}{12}{subsection.1.2.2}
-\contentsline {chapter}{\numberline {2}Das Modbus-Protokoll}{14}{chapter.2}
-\contentsline {section}{\numberline {2.1}Verbindungstypen}{14}{section.2.1}
-\contentsline {section}{\numberline {2.2}Nachrichtenaufbau}{15}{section.2.2}
-\contentsline {section}{\numberline {2.3}Registertypen}{15}{section.2.3}
-\contentsline {section}{\numberline {2.4}Nachrichtenverarbeitung}{16}{section.2.4}
-\contentsline {section}{\numberline {2.5}Funktionscodes}{16}{section.2.5}
-\contentsline {chapter}{\numberline {3}Aufbau und Dokumentation des Funktionscodes}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Geforderte Funktionseigenschaften}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2}Vorbereitende Ma\IeC {\ss }nahmen}{22}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Zuweisung variabler Inputparameter und Variableninitiierung}{22}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Aufbau von Strukturen}{23}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}\IeC {\"U}berpr\IeC {\"u}fung der Eingabeparameter}{24}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Verf\IeC {\"u}gbarkeitspr\IeC {\"u}fung der seriellen Schnittstelle}{28}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Aufbau der seriellen Schnittstelle}{29}{section.3.3}
-\contentsline {section}{\numberline {3.4}Abgleich der Wetterregion im Register}{29}{section.3.4}
-\contentsline {section}{\numberline {3.5}Festlegung der Timerparameter und Starten des Timers}{30}{section.3.5}
-\contentsline {section}{\numberline {3.6}Abschicken der MODBUS-Anfragen}{32}{section.3.6}
-\contentsline {section}{\numberline {3.7}Senden und Empfangen}{36}{section.3.7}
-\contentsline {section}{\numberline {3.8}Rx-Datenverarbeitung}{37}{section.3.8}
-\contentsline {section}{\numberline {3.9}Datenverarbeitung}{39}{section.3.9}
-\contentsline {section}{\numberline {3.10}Funktionsaufbau}{53}{section.3.10}
-\contentsline {chapter}{\numberline {4}Datenanalyse}{54}{chapter.4}
-\contentsline {part}{III\hspace {1em}Schluss}{58}{part.3}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{59}{chapter.5}
-\contentsline {chapter}{Anhang}{60}{section*.22}
-\contentsline {chapter}{Anhang}{61}{section*.23}
-\contentsline {chapter}{\numberline {A}Aufbau der Wetterstation}{61}{appendix.A}
-\contentsline {chapter}{\numberline {B}Das MODBUS Protokoll}{62}{appendix.B}
-\contentsline {chapter}{\numberline {C}Hilfsprogramme}{64}{appendix.C}
-\contentsline {chapter}{\numberline {D}Abk\IeC {\"u}rzungsverzeichnis}{65}{appendix.D}
+\contentsline {subsection}{\numberline {1.2.3}Datenabruf}{13}{subsection.1.2.3}
+\contentsline {chapter}{\numberline {2}Das Modbus-Protokoll}{15}{chapter.2}
+\contentsline {section}{\numberline {2.1}Verbindungstypen}{15}{section.2.1}
+\contentsline {section}{\numberline {2.2}Nachrichtenaufbau}{16}{section.2.2}
+\contentsline {section}{\numberline {2.3}Registertypen}{17}{section.2.3}
+\contentsline {section}{\numberline {2.4}Nachrichtenverarbeitung}{17}{section.2.4}
+\contentsline {section}{\numberline {2.5}Funktions- und Fehlercodes}{17}{section.2.5}
+\contentsline {section}{\numberline {2.6}Cyclic Redundancy Check}{19}{section.2.6}
+\contentsline {section}{\numberline {2.7}Simulation der Wetterstation}{21}{section.2.7}
+\contentsline {chapter}{\numberline {3}Aufbau und Dokumentation des Programmcodes in MATLAB}{22}{chapter.3}
+\contentsline {section}{\numberline {3.1}Geforderte Funktionseigenschaften}{22}{section.3.1}
+\contentsline {section}{\numberline {3.2}Vorbereitende Ma\IeC {\ss }nahmen}{25}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Zuweisung variabler Inputparameter und Variableninitiierung}{25}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Aufbau von Strukturen}{26}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}\IeC {\"U}berpr\IeC {\"u}fung der Eingabeparameter}{27}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Verf\IeC {\"u}gbarkeitspr\IeC {\"u}fung der seriellen Schnittstelle}{31}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Aufbau der seriellen Schnittstelle}{32}{section.3.3}
+\contentsline {section}{\numberline {3.4}Abgleich der Wetterregion im Register}{32}{section.3.4}
+\contentsline {section}{\numberline {3.5}Festlegung der Timerparameter und Starten des Timers}{33}{section.3.5}
+\contentsline {section}{\numberline {3.6}Abschicken der MODBUS-Anfragen}{35}{section.3.6}
+\contentsline {section}{\numberline {3.7}Senden und Empfangen}{39}{section.3.7}
+\contentsline {section}{\numberline {3.8}Rx-Datenverarbeitung}{40}{section.3.8}
+\contentsline {section}{\numberline {3.9}Datenverarbeitung}{42}{section.3.9}
+\contentsline {section}{\numberline {3.10}Funktionsaufbau}{55}{section.3.10}
+\contentsline {chapter}{\numberline {4}Datenanalyse}{56}{chapter.4}
+\contentsline {section}{\numberline {4.1}Sonnenscheindauer}{56}{section.4.1}
+\contentsline {section}{\numberline {4.2}Globalstrahlung}{58}{section.4.2}
+\contentsline {section}{\numberline {4.3}Niederschlagsmenge}{60}{section.4.3}
+\contentsline {section}{\numberline {4.4}Windst\IeC {\"a}rke}{61}{section.4.4}
+\contentsline {section}{\numberline {4.5}Mittlere Lufttemperatur}{62}{section.4.5}
+\contentsline {part}{III\hspace {1em}Schluss}{64}{part.3}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{65}{chapter.5}
+\contentsline {chapter}{Anhang}{66}{section*.28}
+\contentsline {chapter}{Anhang}{67}{section*.29}
+\contentsline {chapter}{\numberline {A}Aufbau der Wetterstation}{67}{appendix.A}
+\contentsline {chapter}{\numberline {B}Das MODBUS Protokoll}{68}{appendix.B}
+\contentsline {chapter}{\numberline {C}Hilfsprogramme}{70}{appendix.C}
+\contentsline {chapter}{\numberline {D}Abk\IeC {\"u}rzungsverzeichnis}{71}{appendix.D}

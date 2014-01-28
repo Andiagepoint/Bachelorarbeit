@@ -26,24 +26,31 @@
 \@writefile{toc}{\select@language{ngerman}}
 \@writefile{lof}{\select@language{ngerman}}
 \@writefile{lot}{\select@language{ngerman}}
+\citation{googleearth}
+\citation{ModbusDoc}
+\citation{ModbusDoc}
 \citation{HKWDoc}
 \@writefile{toc}{\contentsline {part}{I\hspace  {1em}Einleitung}{7}{part.1}}
+\citation{EVOutlook}
 \citation{NPE}
 \citation{SEEV}
+\citation{LtoF}
 \@writefile{toc}{\contentsline {part}{II\hspace  {1em}Hauptteil}{9}{part.2}}
-\citation{HWKDoc}
+\citation{HKWDoc}
 \citation{HKWDoc}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Aufbau der Wetterstation}{10}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Aufbau der Datenstruktur}{10}{section.1.1}}
+\citation{googleearth}
+\citation{googleearth}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Verfuegbare Prognosedaten WS-K RTU485 WPAia\relax }}{11}{figure.caption.4}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:1}{{1.1}{11}{Verfuegbare Prognosedaten WS-K RTU485 WPAia\relax }{figure.caption.4}{}}
+\newlabel{fig:datenstrukt}{{1.1}{11}{Verfuegbare Prognosedaten WS-K RTU485 WPAia\relax }{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Technischer Aufbau der Station}{11}{section.1.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Senderauswahl und Stationsaufbau}{11}{subsection.1.2.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Standorte der Langwellensender und des Empf\IeC {\"a}ngers\relax }}{11}{figure.caption.5}}
-\newlabel{fig:3}{{1.2}{11}{Standorte der Langwellensender und des Empfängers\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Standorte der Langwellensender und des Empf\IeC {\"a}ngers \cite  {googleearth}\relax }}{11}{figure.caption.5}}
+\newlabel{fig:senderlok}{{1.2}{11}{Standorte der Langwellensender und des Empfängers \cite {googleearth}\relax }{figure.caption.5}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {1.1}{\ignorespaces Einstellungsparameter f\IeC {\"u}r den Kommunikationsaufbau und den Wetterbereich\relax }}{12}{table.caption.6}}
 \newlabel{tab:kommeinstpara}{{1.1}{12}{Einstellungsparameter für den Kommunikationsaufbau und den Wetterbereich\relax }{table.caption.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Registereinteilung und Schnittstellenparametrierung}{12}{subsection.1.2.2}}
@@ -51,142 +58,202 @@
 \citation{Kuveler.2007}
 \citation{Kuveler.2007}
 \citation{Kuveler.2007}
+\citation{HKWDoc}
 \newlabel{coilabfrage}{{1.2.2}{13}{Registereinteilung und Schnittstellenparametrierung}{table.caption.6}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {1.2}{\ignorespaces Schnittstellenparameterbelegung\relax }}{13}{table.caption.7}}
 \newlabel{tab:parabel}{{1.2}{13}{Schnittstellenparameterbelegung\relax }{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Datenabruf}{13}{subsection.1.2.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {1.3}{\ignorespaces Beispiel f\IeC {\"u}r das Unterschiedliche Datenupdate\relax }}{14}{table.caption.8}}
+\newlabel{tab:datenupdate}{{1.3}{14}{Beispiel für das Unterschiedliche Datenupdate\relax }{table.caption.8}{}}
 \citation{ModbusDoc}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Das Modbus-Protokoll}{15}{chapter.2}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Skizze der Funktionsweise des MODBUS Protokolls\relax }}{15}{figure.caption.9}}
+\newlabel{fig:prinzip}{{2.1}{15}{Skizze der Funktionsweise des MODBUS Protokolls\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Verbindungstypen}{15}{section.2.1}}
 \citation{Schleicher.2008}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Das Modbus-Protokoll}{14}{chapter.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Nachrichtenaufbau}{16}{section.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Aufbau einer MODBUS Nachricht\relax }}{16}{figure.caption.10}}
+\newlabel{fig:modbusmessage}{{2.2}{16}{Aufbau einer MODBUS Nachricht\relax }{figure.caption.10}{}}
+\citation{modicon}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Registertypen}{17}{section.2.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces \IeC {\"U}bersicht der Registerarten im MODBUS Protokoll\relax }}{17}{table.caption.11}}
+\newlabel{tab:regartenmodbus}{{2.1}{17}{Übersicht der Registerarten im MODBUS Protokoll\relax }{table.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Nachrichtenverarbeitung}{17}{section.2.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Funktions- und Fehlercodes}{17}{section.2.5}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Aufbau einer lesenden Kommunikation mit einem Coil-Register \relax }}{18}{table.caption.12}}
+\newlabel{tab:coilnachricht}{{2.2}{18}{Aufbau einer lesenden Kommunikation mit einem Coil-Register \relax }{table.caption.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Aufbau einer schreibenden Kommunikation mit einem Holding-Register \relax }}{18}{table.caption.13}}
+\newlabel{tab:writehreg}{{2.3}{18}{Aufbau einer schreibenden Kommunikation mit einem Holding-Register \relax }{table.caption.13}{}}
+\citation{modicon}
+\citation{Schleicher.2008}
+\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Aufbau einer lesenden Kommunikation mit einem Holding-Register \relax }}{19}{table.caption.14}}
+\newlabel{tab:readhreg}{{2.4}{19}{Aufbau einer lesenden Kommunikation mit einem Holding-Register \relax }{table.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}Cyclic Redundancy Check}{19}{section.2.6}}
+\@writefile{lol}{\contentsline {lstlisting}{modbus/crccalc.m}{20}{lstlisting.2.-1}}
+\citation{eterlogic}
+\citation{everest}
+\@writefile{toc}{\contentsline {section}{\numberline {2.7}Simulation der Wetterstation}{21}{section.2.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Aufbau und Dokumentation des Programmcodes in MATLAB}{22}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Skizze der Funktionsweise des MODBUS Protokolls\relax }}{14}{figure.caption.8}}
-\newlabel{fig:prinzip}{{2.1}{14}{Skizze der Funktionsweise des MODBUS Protokolls\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Verbindungstypen}{14}{section.2.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Nachrichtenaufbau}{15}{section.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Aufbau einer MODBUS Nachricht\relax }}{15}{figure.caption.9}}
-\newlabel{fig:modbusmessage}{{2.2}{15}{Aufbau einer MODBUS Nachricht\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Registertypen}{15}{section.2.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces \IeC {\"U}bersicht der Registerarten im MODBUS Protokoll\relax }}{16}{table.caption.10}}
-\newlabel{tab:regartenmodbus}{{2.1}{16}{Übersicht der Registerarten im MODBUS Protokoll\relax }{table.caption.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Nachrichtenverarbeitung}{16}{section.2.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Funktionscodes}{16}{section.2.5}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.2}{\ignorespaces Aufbau einer lesenden Kommunikation mit einem Coil-Register \relax }}{17}{table.caption.11}}
-\newlabel{tab:coilnachricht}{{2.2}{17}{Aufbau einer lesenden Kommunikation mit einem Coil-Register \relax }{table.caption.11}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.3}{\ignorespaces Aufbau einer schreibenden Kommunikation mit einem Holding-Register \relax }}{17}{table.caption.12}}
-\newlabel{tab:writehreg}{{2.3}{17}{Aufbau einer schreibenden Kommunikation mit einem Holding-Register \relax }{table.caption.12}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2.4}{\ignorespaces Aufbau einer lesenden Kommunikation mit einem Holding-Register \relax }}{17}{table.caption.13}}
-\newlabel{tab:readhreg}{{2.4}{17}{Aufbau einer lesenden Kommunikation mit einem Holding-Register \relax }{table.caption.13}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Aufbau und Dokumentation des Funktionscodes}{19}{chapter.3}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Geforderte Funktionseigenschaften}{19}{section.3.1}}
-\newlabel{createstruct}{{3.1}{19}{Geforderte Funktionseigenschaften}{section.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Ablaufplan der Funktion forecast\_data\relax }}{20}{figure.caption.14}}
-\newlabel{fig:flowchart}{{3.1}{20}{Ablaufplan der Funktion forecast\_data\relax }{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Beispiel f\IeC {\"u}r den Funktionsaufruf\relax }}{21}{figure.caption.15}}
-\newlabel{fig:funkaufruf}{{3.2}{21}{Beispiel für den Funktionsaufruf\relax }{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Vorbereitende Ma\IeC {\ss }nahmen}{22}{section.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Zuweisung variabler Inputparameter und Variableninitiierung}{22}{subsection.3.2.1}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{22}{lstlisting.3.-1}}
-\newlabel{sendloop}{{3.2.1}{23}{Zuweisung variabler Inputparameter und Variableninitiierung}{lstnumber.-1.56}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Aufbau von Strukturen}{23}{subsection.3.2.2}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{23}{lstlisting.3.-2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}\IeC {\"U}berpr\IeC {\"u}fung der Eingabeparameter}{24}{subsection.3.2.3}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{24}{lstlisting.3.-3}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{24}{lstlisting.3.-4}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{24}{lstlisting.3.-5}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/getcityid.m}{25}{lstlisting.3.-6}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{25}{lstlisting.3.-7}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{26}{lstlisting.3.-8}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{27}{lstlisting.3.-9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Verf\IeC {\"u}gbarkeitspr\IeC {\"u}fung der seriellen Schnittstelle}{28}{subsection.3.2.4}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{28}{lstlisting.3.-10}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Aufbau der seriellen Schnittstelle}{29}{section.3.3}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{29}{lstlisting.3.-11}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/openserialport.m}{29}{lstlisting.3.-12}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Abgleich der Wetterregion im Register}{29}{section.3.4}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{29}{lstlisting.3.-13}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Festlegung der Timerparameter und Starten des Timers}{30}{section.3.5}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{30}{lstlisting.3.-14}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{31}{lstlisting.3.-15}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/stoptimer.m}{32}{lstlisting.3.-16}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Abschicken der MODBUS-Anfragen}{32}{section.3.6}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/sendloop.m}{32}{lstlisting.3.-17}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/sendloop.m}{32}{lstlisting.3.-18}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/sendloop.m}{33}{lstlisting.3.-19}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Geforderte Funktionseigenschaften}{22}{section.3.1}}
+\newlabel{createstruct}{{3.1}{22}{Geforderte Funktionseigenschaften}{section.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Ablaufplan der Funktion forecast\_data\relax }}{23}{figure.caption.15}}
+\newlabel{fig:flowchart}{{3.1}{23}{Ablaufplan der Funktion forecast\_data\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Beispiel f\IeC {\"u}r den Funktionsaufruf\relax }}{24}{figure.caption.16}}
+\newlabel{fig:funkaufruf}{{3.2}{24}{Beispiel für den Funktionsaufruf\relax }{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Vorbereitende Ma\IeC {\ss }nahmen}{25}{section.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Zuweisung variabler Inputparameter und Variableninitiierung}{25}{subsection.3.2.1}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{25}{lstlisting.3.-2}}
+\newlabel{sendloop}{{3.2.1}{26}{Zuweisung variabler Inputparameter und Variableninitiierung}{lstnumber.-2.40}{}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{26}{lstlisting.3.-3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Aufbau von Strukturen}{26}{subsection.3.2.2}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{26}{lstlisting.3.-4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}\IeC {\"U}berpr\IeC {\"u}fung der Eingabeparameter}{27}{subsection.3.2.3}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{27}{lstlisting.3.-5}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{28}{lstlisting.3.-6}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{28}{lstlisting.3.-7}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/getcityid.m}{28}{lstlisting.3.-8}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{29}{lstlisting.3.-9}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{30}{lstlisting.3.-10}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/inputcheck.m}{30}{lstlisting.3.-11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Verf\IeC {\"u}gbarkeitspr\IeC {\"u}fung der seriellen Schnittstelle}{31}{subsection.3.2.4}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{31}{lstlisting.3.-12}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Aufbau der seriellen Schnittstelle}{32}{section.3.3}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{32}{lstlisting.3.-13}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/openserialport.m}{32}{lstlisting.3.-14}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Abgleich der Wetterregion im Register}{32}{section.3.4}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{32}{lstlisting.3.-15}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Festlegung der Timerparameter und Starten des Timers}{33}{section.3.5}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{33}{lstlisting.3.-16}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/forecastdata.m}{34}{lstlisting.3.-17}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/stoptimer.m}{35}{lstlisting.3.-18}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Abschicken der MODBUS-Anfragen}{35}{section.3.6}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/sendloop.m}{35}{lstlisting.3.-19}}
 \@writefile{lol}{\contentsline {lstlisting}{programm/sendloop.m}{35}{lstlisting.3.-20}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/sendloop.m}{35}{lstlisting.3.-21}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Senden und Empfangen}{36}{section.3.7}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/sendandreceivedata.m}{36}{lstlisting.3.-22}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/formatmodbusmsg.m}{37}{lstlisting.3.-23}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.8}Rx-Datenverarbeitung}{37}{section.3.8}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/rxdataprocessing.m}{37}{lstlisting.3.-24}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/rxdataprocessing.m}{38}{lstlisting.3.-25}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/fcodecheck.m}{38}{lstlisting.3.-26}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/rxdataprocessing.m}{39}{lstlisting.3.-27}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.9}Datenverarbeitung}{39}{section.3.9}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{39}{lstlisting.3.-28}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{40}{lstlisting.3.-29}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{40}{lstlisting.3.-30}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{41}{lstlisting.3.-31}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{42}{lstlisting.3.-32}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/sendloop.m}{36}{lstlisting.3.-21}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/sendloop.m}{37}{lstlisting.3.-22}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/sendloop.m}{38}{lstlisting.3.-23}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Senden und Empfangen}{39}{section.3.7}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/sendandreceivedata.m}{39}{lstlisting.3.-24}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/formatmodbusmsg.m}{40}{lstlisting.3.-25}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Rx-Datenverarbeitung}{40}{section.3.8}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/rxdataprocessing.m}{40}{lstlisting.3.-26}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/rxdataprocessing.m}{40}{lstlisting.3.-27}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/fcodecheck.m}{41}{lstlisting.3.-28}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/rxdataprocessing.m}{42}{lstlisting.3.-29}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.9}Datenverarbeitung}{42}{section.3.9}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{42}{lstlisting.3.-30}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{42}{lstlisting.3.-31}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{43}{lstlisting.3.-32}}
 \@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{43}{lstlisting.3.-33}}
 \@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{44}{lstlisting.3.-34}}
 \@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{45}{lstlisting.3.-35}}
 \@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{47}{lstlisting.3.-36}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{47}{lstlisting.3.-37}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{48}{lstlisting.3.-37}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{50}{lstlisting.3.-38}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{50}{lstlisting.3.-39}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{50}{lstlisting.3.-40}}
 \citation{Wagner.2006}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{48}{lstlisting.3.-38}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{48}{lstlisting.3.-39}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{49}{lstlisting.3.-40}}
-\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{50}{lstlisting.3.-41}}
-\citation{SLM}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{51}{lstlisting.3.-41}}
 \@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{52}{lstlisting.3.-42}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Datenverlust bei kleinem Updateintervall am Beispiel minimaler Temperatur und Luftdruck\relax }}{53}{table.caption.16}}
-\newlabel{tab:datenverlust}{{3.1}{53}{Datenverlust bei kleinem Updateintervall am Beispiel minimaler Temperatur und Luftdruck\relax }{table.caption.16}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.10}Funktionsaufbau}{53}{section.3.10}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Datenanalyse}{54}{chapter.4}}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{53}{lstlisting.3.-43}}
+\citation{SLM}
+\@writefile{lol}{\contentsline {lstlisting}{programm/dataprocessing.m}{54}{lstlisting.3.-44}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.10}Funktionsaufbau}{55}{section.3.10}}
+\citation{Armstrong.1992}
+\citation{TelHKW}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Datenanalyse}{56}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Vergleich der interpolierten Sonnenscheindauer mit den LMU Wetterdaten\relax }}{55}{figure.caption.17}}
-\newlabel{fig:sonnensdauer}{{4.1}{55}{Vergleich der interpolierten Sonnenscheindauer mit den LMU Wetterdaten\relax }{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Vergleich der interpolierten Globalstrahlung mit den LMU Wetterdaten\relax }}{55}{figure.caption.18}}
-\newlabel{fig:globalstr}{{4.2}{55}{Vergleich der interpolierten Globalstrahlung mit den LMU Wetterdaten\relax }{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Vergleich der interpolierten Niederschlagsmenge mit den LMU Wetterdaten\relax }}{56}{figure.caption.19}}
-\newlabel{fig:niedersmenge}{{4.3}{56}{Vergleich der interpolierten Niederschlagsmenge mit den LMU Wetterdaten\relax }{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Vergleich der interpolierten Windstaerke mit den LMU Wetterdaten\relax }}{56}{figure.caption.20}}
-\newlabel{fig:windstaerke}{{4.4}{56}{Vergleich der interpolierten Windstaerke mit den LMU Wetterdaten\relax }{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Vergleich der interpolierten mittleren Lufttemperatur mit den LMU Wetterdaten\relax }}{57}{figure.caption.21}}
-\newlabel{fig:mittlufttemp}{{4.5}{57}{Vergleich der interpolierten mittleren Lufttemperatur mit den LMU Wetterdaten\relax }{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {part}{III\hspace  {1em}Schluss}{58}{part.3}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{59}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Sonnenscheindauer}{56}{section.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Ergebnis der Sonnenaufgangs- und Untergangsadaption\relax }}{56}{figure.caption.17}}
+\newlabel{fig:sunriseadapt}{{4.1}{56}{Ergebnis der Sonnenaufgangs- und Untergangsadaption\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Vergleich der interpolierten Sonnenscheindauer mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }}{57}{figure.caption.18}}
+\newlabel{fig:sonnensdauer}{{4.2}{57}{Vergleich der interpolierten Sonnenscheindauer mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }{figure.caption.18}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Absolute Abweichung der Sonnenscheindauer von den LMU Wetterdaten in Stunden\relax }}{58}{table.caption.19}}
+\newlabel{tab:proggsd}{{4.1}{58}{Absolute Abweichung der Sonnenscheindauer von den LMU Wetterdaten in Stunden\relax }{table.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Globalstrahlung}{58}{section.4.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Vergleich der interpolierten Globalstrahlung mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }}{59}{figure.caption.20}}
+\newlabel{fig:globalstr}{{4.3}{59}{Vergleich der interpolierten Globalstrahlung mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }{figure.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces RMSE der Globalstrahlung in W/m\IeC {\texttwosuperior }\relax }}{59}{table.caption.21}}
+\newlabel{tab:proggsd}{{4.2}{59}{RMSE der Globalstrahlung in W/m²\relax }{table.caption.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Niederschlagsmenge}{60}{section.4.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Vergleich der interpolierten Niederschlagsmenge mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }}{60}{figure.caption.22}}
+\newlabel{fig:niedersmenge}{{4.4}{60}{Vergleich der interpolierten Niederschlagsmenge mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }{figure.caption.22}{}}
+\citation{GrenzProf}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces RMSE der Niederschlagsmenge in l/m\IeC {\texttwosuperior }\relax }}{61}{table.caption.23}}
+\newlabel{tab:proggns}{{4.3}{61}{RMSE der Niederschlagsmenge in l/m²\relax }{table.caption.23}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Windst\IeC {\"a}rke}{61}{section.4.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Vergleich der interpolierten Windstaerke mit den LMU Wetterdaten\relax }}{61}{figure.caption.24}}
+\newlabel{fig:windstaerke}{{4.5}{61}{Vergleich der interpolierten Windstaerke mit den LMU Wetterdaten\relax }{figure.caption.24}{}}
+\citation{DWD}
+\citation{stadtklima}
+\citation{DWD}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces RMSE der Windst\IeC {\"a}rke in Bft\relax }}{62}{table.caption.25}}
+\newlabel{tab:proggwind}{{4.4}{62}{RMSE der Windstärke in Bft\relax }{table.caption.25}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Mittlere Lufttemperatur}{62}{section.4.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Vergleich der interpolierten mittleren Lufttemperatur mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }}{63}{figure.caption.26}}
+\newlabel{fig:mittlufttemp}{{4.6}{63}{Vergleich der interpolierten mittleren Lufttemperatur mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }{figure.caption.26}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces RMSE der mittleren Lufttemperatur in $^\circ $C\relax }}{63}{table.caption.27}}
+\newlabel{tab:progglufttemp}{{4.5}{63}{RMSE der mittleren Lufttemperatur in $^\circ $C\relax }{table.caption.27}{}}
+\@writefile{toc}{\contentsline {part}{III\hspace  {1em}Schluss}{64}{part.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{65}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Anhang}{60}{section*.22}}
+\@writefile{toc}{\contentsline {chapter}{Anhang}{66}{section*.28}}
 \citation{HKWDoc}
 \citation{HKWDoc}
-\@writefile{toc}{\contentsline {chapter}{Anhang}{61}{section*.23}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Aufbau der Wetterstation}{61}{appendix.A}}
+\@writefile{toc}{\contentsline {chapter}{Anhang}{67}{section*.29}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Aufbau der Wetterstation}{67}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Detailierte Datenstruktur der Wetterstation\cite  [S. 17-26]{HKWDoc}\relax }}{61}{table.caption.24}}
-\newlabel{tab:detaildatenstruktur}{{A.1}{61}{Detailierte Datenstruktur der Wetterstation\cite [S. 17-26]{HKWDoc}\relax }{table.caption.24}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Das MODBUS Protokoll}{62}{appendix.B}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Detailierte Datenstruktur der Wetterstation\cite  [S. 17-26]{HKWDoc}\relax }}{67}{table.caption.30}}
+\newlabel{tab:detaildatenstruktur}{{A.1}{67}{Detailierte Datenstruktur der Wetterstation\cite [S. 17-26]{HKWDoc}\relax }{table.caption.30}{}}
+\citation{ModbusDoc}
+\citation{ModbusDoc}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Das MODBUS Protokoll}{68}{appendix.B}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces Ablaufdiagramm f\IeC {\"u}r die MODBUS Nachrichten\IeC {\"u}berpr\IeC {\"u}fung\relax }}{62}{figure.caption.25}}
-\newlabel{fig:modbustransdiag}{{B.1}{62}{Ablaufdiagramm für die MODBUS Nachrichtenüberprüfung\relax }{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {B.2}{\ignorespaces \IeC {\"U}bersicht der zur Verf\IeC {\"u}gung stehenden Funktionscodes in MODBUS\relax }}{63}{figure.caption.26}}
-\newlabel{fig:fcodetab}{{B.2}{63}{Übersicht der zur Verfügung stehenden Funktionscodes in MODBUS\relax }{figure.caption.26}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Hilfsprogramme}{64}{appendix.C}}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.1}{\ignorespaces Ablaufdiagramm f\IeC {\"u}r die MODBUS Nachrichten\IeC {\"u}berpr\IeC {\"u}fung \cite  [S. 9]{ModbusDoc}\relax }}{68}{figure.caption.31}}
+\newlabel{fig:modbustransdiag}{{B.1}{68}{Ablaufdiagramm für die MODBUS Nachrichtenüberprüfung \cite [S. 9]{ModbusDoc}\relax }{figure.caption.31}{}}
+\citation{ModbusDoc}
+\citation{ModbusDoc}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.2}{\ignorespaces \IeC {\"U}bersicht der zur Verf\IeC {\"u}gung stehenden Funktionscodes in MODBUS \cite  [S. 11]{ModbusDoc}\relax }}{69}{figure.caption.32}}
+\newlabel{fig:fcodetab}{{B.2}{69}{Übersicht der zur Verfügung stehenden Funktionscodes in MODBUS \cite [S. 11]{ModbusDoc}\relax }{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Hilfsprogramme}{70}{appendix.C}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {chapter}{\numberline {D}Abk\IeC {\"u}rzungsverzeichnis}{71}{appendix.D}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newacro{EV}[\AC@hyperlink{EV}{EV}]{Electric Vehicle}
+\newacro{HEMS}[\AC@hyperlink{HEMS}{HEMS}]{Home Energy Management System}
+\newacro{EMU}[\AC@hyperlink{EMU}{EMU}]{Energy Management Unit}
+\newacro{RTU}[\AC@hyperlink{RTU}{RTU}]{Remute Terminal Unit}
+\newacro{FSK}[\AC@hyperlink{FSK}{FSK}]{Frequency Shift Keying}
+\newacro{IP}[\AC@hyperlink{IP}{IP}]{Internet Protocol}
+\newacro{TCP}[\AC@hyperlink{TCP}{TCP}]{Transmission Control Protocol}
+\newacro{RS}[\AC@hyperlink{RS}{RS}]{Recommended Standard}
+\newacro{OSI}[\AC@hyperlink{OSI}{OSI}]{Open Systems Interconnection}
+\newacro{I/O}[\AC@hyperlink{I/O}{I/O}]{Input/Output}
+\newacro{L-Byte}[\AC@hyperlink{L-Byte}{L-Byte}]{Low-Byte}
+\newacro{H-Byte}[\AC@hyperlink{H-Byte}{H-Byte}]{High-Byte}
+\newacro{COM}[\AC@hyperlink{COM}{COM}]{Communication}
+\newacro{ADU}[\AC@hyperlink{ADU}{ADU}]{Application Data Unit}
+\newacro{PDU}[\AC@hyperlink{PDU}{PDU}]{Protocol Data Unit}
+\newacro{rx}[\AC@hyperlink{rx}{rx}]{Empf\IeC {\"a}nger}
+\newacro{CRC}[\AC@hyperlink{CRC}{CRC}]{Cyclic Redundancy Check}
+\newacro{ID}[\AC@hyperlink{ID}{ID}]{Identifkationsnummer}
+\newacro{GmbH}[\AC@hyperlink{GmbH}{GmbH}]{Gesellschaft mit beschr\IeC {\"a}nkter Haftung}
+\newacro{LMU}[\AC@hyperlink{LMU}{LMU}]{Ludwig-Maximilians-Universit\IeC {\"a}t}
+\newacro{DWD}[\AC@hyperlink{DWD}{DWD}]{Deutscher Wetterdienst}
+\newacro{RMSE}[\AC@hyperlink{RMSE}{RMSE}]{Root mean square error}
+\newacro{NN}[\AC@hyperlink{NN}{NN}]{Normal Null Meeresspiegel}
 \bibstyle{unsrt}
 \bibdata{literatur}
-\@writefile{toc}{\contentsline {chapter}{\numberline {D}Abk\IeC {\"u}rzungsverzeichnis}{65}{appendix.D}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newacro{NN}[\AC@hyperlink{NN}{NN}]{Normal Null Meeresspiegel}
 \newacro{hPa}[\AC@hyperlink{hPa}{hPa}]{Hektopascal}
 \newacro{Bft}[\AC@hyperlink{Bft}{Bft}]{Beaufort}
 \newacro{mm}[\AC@hyperlink{mm}{mm}]{Millimeter}
@@ -201,11 +268,22 @@
 \newacro{SW}[\AC@hyperlink{SW}{SW}]{Suedwest}
 \newacro{W}[\AC@hyperlink{W}{W}]{Westen}
 \newacro{NW}[\AC@hyperlink{NW}{NW}]{Nordwest}
-\bibcite{HKWDoc}{1}
-\bibcite{NPE}{2}
-\bibcite{SEEV}{3}
-\bibcite{Kuveler.2007}{4}
-\bibcite{ModbusDoc}{5}
-\bibcite{Schleicher.2008}{6}
-\bibcite{Wagner.2006}{7}
-\bibcite{SLM}{8}
+\bibcite{googleearth}{1}
+\bibcite{HKWDoc}{2}
+\bibcite{EVOutlook}{3}
+\bibcite{NPE}{4}
+\bibcite{SEEV}{5}
+\bibcite{LtoF}{6}
+\bibcite{Kuveler.2007}{7}
+\bibcite{ModbusDoc}{8}
+\bibcite{Schleicher.2008}{9}
+\bibcite{modicon}{10}
+\bibcite{eterlogic}{11}
+\bibcite{everest}{12}
+\bibcite{Wagner.2006}{13}
+\bibcite{SLM}{14}
+\bibcite{Armstrong.1992}{15}
+\bibcite{TelHKW}{16}
+\bibcite{GrenzProf}{17}
+\bibcite{DWD}{18}
+\bibcite{stadtklima}{19}
