@@ -11,8 +11,8 @@ if isempty(city_id_dataset)
     lat = '';
 else
     c_id = city_id_dataset{:,1};
-    lng = city_id_dataset{:,3};
-    lat = city_id_dataset{:,4};
+    lat = city_id_dataset{:,3};
+    lng = city_id_dataset{:,4};
     city_id_correct = 1;
 end
 end

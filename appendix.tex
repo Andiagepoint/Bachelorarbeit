@@ -66,7 +66,54 @@ Signifikantes Wetter &  &  & 1 - 15 & 1 & 3 Tage & 6h & 120 - 135 & 1=sonnig/kla
 \caption{Übersicht der zur Verfügung stehenden Funktionscodes in MODBUS \cite[S. 11]{ModbusDoc}}
 \label{fig:fcodetab}
 \end{figure} 
-\chapter{Hilfsprogramme}
-
+\chapter{Hilfsfunktionen}
+\section{read\_com\_set}\label{sec:readcomset}
+Die Funktion \textsf{read\_com\_set} ermöglicht es auch außerhalb des Funktionsaufrufs von \textsf{forecast\_data} Parameter der Wetterstation abzurufen sofern eine serielle Schnittstelle besteht. Neben dem Abruf nur eines Parameters, können auch mehrere Parameter gleichzeitig in einem Cell-Array übergeben werden. Die Ausgabe der abgerufenen Werte erfolgt dabei in der Reihenfolge der angefragten Parameter. Da die Funktion \textsf{send\_and\_receive\_data} hier keine Daten interpolieren oder abspeichern muss, werden die Parameter für Längen- und Breitengrad, Verbindungsqualität, lokaler Temperatur und Pfadangabe des Speicherortes nicht benötigt. 
+\lstinputlisting[firstline=1, lastline=54]{programm/readcomset.m}
+\section{write\_com\_set}\label{sec:writecomset}
+Übergabeparameter für diese Funktion sind die Slave ID, der zu schreibende Wert in dezimal Format und die Spezifizierung der Adresse im String Format. Der Zähler \textit{cnt} dient zur Initialisierung des while-Schleifendurchlaufs. Siehe hierzu Kapitel~\ref{sec:rxdatenverarbeitung} auf Seite~\pageref{sec:rxdatenverarbeitung}.
+Der Inputwert wird in hex umgerechnet, danach wird die Registeradresse ermittelt, die PDU gebildet und über die serielle Schnittstelle geschickt.
+\lstinputlisting{programm/writecomset.m}
+\section{stop\_timer}\label{sec:stoptimer}
+Die Funktion \textsf{stop\_timer} meldet dem Nutzer das Ende des Timer Objektes, löscht es, speichert den Datencontainer mit den Langzeitdaten ab und schließt die serielle Schnittstelle. Vorteil dieser Funktion ist es, sobald ein Fehler in der forecast Funktion auftritt, wird zumindest der Datencontainer immer noch gesichert.
+\lstinputlisting{programm/stoptimer.m}
+\section{get\_reg\_address}\label{sec:getregadd}
+Die Funktion erhält einen String mit der Information ob es sich um eine Abfrage für die Einstellungsparameter oder Wetterdaten der Wetterstation handelt. Da das Register mit den Adressen in einem struct angelegt wurde, kann man die gesuchte Adresse einfach durch Vorgabe der Zweigpunkte mit dem Befehl \textsf{getfield} in dieser Struktur abrufen. Man hätte die Registeradressdaten auch in einem Database anlegen können, aber auch hier hat ein Test gezeigt, dass der Abruf aus der Struktur ein bisschen schneller ist. Schließlich muss nicht immer wieder die komplette Database durchsucht werden. 
+\lstinputlisting[firstline=1, lastline=59]{programm/getregaddress.m}
+\section{reg\_num}\label{sec:regnum}
+Es erfolgt die Berechnung der Anzahl an Registeradressen. Sind die Adressen gleich würde die Differenz 0 ergeben. Daher wird zum Ergebnis der Subtraktion eine 1 addiert.
+\lstinputlisting{programm/regnum.m}
+\section{format\_modbus\_msg}\label{sec:formatmodbusmsg}
+Die Funktion \textsf{format\_modbus\_msg} transformiert den n-Byte großen String der MODBUS-Nachricht in einen n-zeiligen Vektor mit dezimalen Werten.
+\lstinputlisting{programm/formatmodbusmsg.m}
+\section{fcode\_check}\label{sec:fcodecheck}
+Es wird lediglich überprüft, ob der Funktionscode den Wert 1, 3 oder 6 hat. Ist dies nicht der Fall, wird das Flag \textit{fcode\_error} auf 1 gesetzt.
+\lstinputlisting{programm/fcodecheck.m}
+\section{MESZ\_calc}\label{sec:meszcalc}
+Die Berücksichtigung der MESZ spielt vor allem für die Berechnung des Sonnenauf- und Sonnenuntergangs eine Rolle. Aber auch bei der Erstellung des Zeitstempels für den Zeitpunkt des Datenabrufs. Hierbei wird einfach überprüft ob das aktuelle Datum im Intervall für die Sommerzeit liegt oder nicht. Entsprechend wird das Flag ausgegeben.
+\lstinputlisting{programm/MESZcalc.m}
+\section{res\_factor}\label{sec:resfactor}
+Da die Ausgangsdaten selbst in unterschiedlicher Auflösung vorliegen, muss zur Berechnung der Anzahl interpolierter Werte ein Faktor verwendet werden. Dieser ergibt sich aus der zu Grunde liegenden zeitlichen Auflösung geteilt durch die gewünschte zeitliche Auflösung.
+\lstinputlisting{programm/resfactor.m}
+\section{utc2date}\label{sec:utc2date}
+Diese Funktion wurde so geschrieben, dass sie Eingabevektoren verarbeiten kann. Ohne diese Maßnahme hätte bei der Interpolation eine for-Schleife für die Berechnung der Start- und Stopzeitpunkte des Gültigkeitsintervalles der Daten in normalem Zeitformat verwendet werden müssen. Ein Test der Laufzeitverbesserung ergab 12 Sekunden für eine for-Schleife. Der hier verwendete Algorithmus entspricht dem im Minix Source Code verwendeten Algorithmus.\cite{utc2date}
+\lstinputlisting{programm/utc2date.m}
+\section{tvector}\label{sec:tvector}
+\lstinputlisting{programm/tvector.m}
+\section{date2utc}\label{sec:date2utc}
+Der hier verwendete Algorithmus entspricht der Berechnungsvorschrift des IEEE.\cite[S. 113]{date2utc}
+\lstinputlisting{programm/date2utc.m}
+\section{data\_mult}\label{sec:datamult}
+Laut Spezifikation des Herstellers\cite[S. 19-20]{HKWDoc} müssen die Werte für die Niederschlagsmenge und die Sonnenscheindauer durch 10 geteilt werden, um die Einheiten l/m² und h zu erhalten.
+\lstinputlisting{programm/datamult.m}
+\section{diurnal\_var}\label{sec:diurnalvar}
+Der Algorithmus für die Berechnung des Sonnenauf- und Sonnenuntergangzeitpunktes wurde dem Kapitel 2.2 \enquote{Astronomische Gegebenheiten} entnommen. \cite{Wagner.2006}
+\lstinputlisting{programm/diurnalvar.m}
+\section{neg\_val\_corr}\label{sec:negvalcorr}
+Funktionsinput sind das Prognosedetail oder der Prognosebereich, die interpolierten Werte und die dazugehörigen Messzeitpunkte. Abhängig von den übergebenen Wetterdaten wird das übergebene Zeitintervall der Messpunkte entweder aufgeteilt oder nicht. Für die Daten der Solarleistung, werden Zeitbereiche gebildet, die vor Sonnenauf- und nach Sonnenuntergang liegen, bzw. dazwischen. Werte egal ob positiv oder negativ, die nach oder vor Sonnenauf- bzw. Sonnenuntergang liegen werden zu Null gesetzt. Werte die dazwischen liegen und negativ sind werden zu Null gesetzt. Für die Niederschlagsmenge und Windstärke werden alle negativen Werte zu Null gesetzt.
+\lstinputlisting{programm/negvalcorr.m}
+\section{crc\_check}\label{sec:crccheck}
+Der CRC Check zerlegt die empfangene Nachricht des Slaves. Von Interesse ist nur der Teil der Nachricht ohne CRC Summe \textit{size(rxdata,1-2)}. Für jedes Byte wird die Dezimalzahl in eine Hexzahl konvertiert und zur MODBUS Nachricht in Hexformat zusammengesetzt. Danach wird die Funktion \textsf{crc\_calc} verwendet um deren Ergebnis mit dem übermittelten CRC Wert zu vergleichen.
+\lstinputlisting{programm/crccheck.m}
 \chapter{Abkürzungsverzeichnis}
 \input{./abbreviations.tex}

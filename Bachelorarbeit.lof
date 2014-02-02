@@ -4,22 +4,25 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Verfuegbare Prognosedaten WS-K RTU485 WPAia\relax }}{11}{figure.caption.4}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Standorte der Langwellensender und des Empf\IeC {\"a}ngers \cite {googleearth}\relax }}{11}{figure.caption.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Skizze der Funktionsweise des MODBUS Protokolls\relax }}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Skizze der Funktionsweise des MODBUS Protokolls \cite [S. 5]{modicon}\relax }}{15}{figure.caption.9}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Aufbau einer MODBUS Nachricht\relax }}{16}{figure.caption.10}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Ablaufplan der Funktion forecast\_data\relax }}{23}{figure.caption.15}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Beispiel f\IeC {\"u}r den Funktionsaufruf\relax }}{24}{figure.caption.16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Neuberechnung Intervallanzahl und -startwerte\relax }}{53}{figure.caption.18}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Parameterbestimmung f\IeC {\"u}r die slm-Funktion\relax }}{56}{figure.caption.19}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Vergleich der Interpolationsfunktionen\relax }}{57}{figure.caption.20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Ergebnis der Sonnenaufgangs- und Untergangsadaption\relax }}{56}{figure.caption.17}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Vergleich der interpolierten Sonnenscheindauer mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }}{57}{figure.caption.18}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Vergleich der interpolierten Globalstrahlung mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }}{59}{figure.caption.20}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Vergleich der interpolierten Niederschlagsmenge mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }}{60}{figure.caption.22}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Vergleich der interpolierten Windstaerke mit den LMU Wetterdaten\relax }}{61}{figure.caption.24}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Vergleich der interpolierten mittleren Lufttemperatur mit den LMU Wetterdaten, Aufnahmetag 24.01.2014\relax }}{63}{figure.caption.26}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ergebnis der Sonnenaufgangs- und Untergangsadaption\relax }}{60}{figure.caption.21}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Vergleich der interpolierten Sonnenscheindauer mit den LMU Wetterdaten, Beobachtungsintervall 15.-24.01.2014\relax }}{61}{figure.caption.22}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Vergleich der interpolierten Globalstrahlung mit den LMU Wetterdaten, Beobachtungsintervall 15.-24.01.2014\relax }}{63}{figure.caption.24}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Vergleich der interpolierten Niederschlagsmenge mit den LMU Wetterdaten, Beobachtungsintervall 15.-24.01.2014\relax }}{64}{figure.caption.26}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Vergleich der interpolierten Windstaerke mit den LMU Wetterdaten, Beobachtungsintervall 15.-24.01.2014\relax }}{66}{figure.caption.28}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Vergleich der interpolierten mittleren Lufttemperatur mit den LMU Wetterdaten, Beobachtungsintervall 15.-24.01.2014\relax }}{67}{figure.caption.30}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Ablaufdiagramm f\IeC {\"u}r die MODBUS Nachrichten\IeC {\"u}berpr\IeC {\"u}fung \cite [S. 9]{ModbusDoc}\relax }}{68}{figure.caption.31}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces \IeC {\"U}bersicht der zur Verf\IeC {\"u}gung stehenden Funktionscodes in MODBUS \cite [S. 11]{ModbusDoc}\relax }}{69}{figure.caption.32}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Ablaufdiagramm f\IeC {\"u}r die MODBUS Nachrichten\IeC {\"u}berpr\IeC {\"u}fung \cite [S. 9]{ModbusDoc}\relax }}{73}{figure.caption.35}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces \IeC {\"U}bersicht der zur Verf\IeC {\"u}gung stehenden Funktionscodes in MODBUS \cite [S. 11]{ModbusDoc}\relax }}{74}{figure.caption.36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

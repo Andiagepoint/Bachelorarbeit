@@ -1,7 +1,11 @@
-function[  ] = send_loop(obj, event, t, fc_def, dev_id, f_path, city, u_c_n, res,...
+function[  ] = send_loop(obj, event, t, fc_def, dev_id, f_path, c_id, u_c_n, res,...
                          lng, lat )
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+%Starts the MODBUS message send loop
+%   For every forecast definition in fc_def a modbus message is generated.
+%   The function send_and_receive_data will transmit those message to the
+%   serial interface.
+
+% Initialize waiting bar
 h = waitbar(0,'Please wait while receiving data...');
 
 daychange_flag = evalin('base','daychange_flag');
@@ -10,14 +14,14 @@ w_dat = evalin('base','weather_data');
 
 % For loop to process every forecast definition(fc_def). 
 for r = 1:t
-    
+        cnt = 0;
         fc_int           = regexp(fc_def{r},'-','split');
+        
 % For the first loop determine if the datacontainer weather_data(w_dat) has
 % stored previous data by analyzing the last stored recording time stamp.
 % If there is such data, compare timestamp with current date. If it is not
 % equal, increase daychange_counter and set daychange_flag true. Make both
 % variables available in base workspace.
-
         if r == 1            
             if ~isempty(w_dat.(fc_int{1}).(fc_int{2}).unix_t_rec)
                 t_rec = w_dat.(fc_int{1}).(fc_int{2}).unix_t_rec(...
@@ -85,34 +89,32 @@ for r = 1:t
                 end  
             end
 
-%         if size(fc_int,2) < 5 
-%             end_reg                 = start_reg;
-%         else
-%             end_reg                 = fc_int(1,5:6);
-%         end
-
         fc_int           = {fc_int{1,1:2}, start_reg{:}, end_reg{:}};
 % Determine register addresses and number of registers to be processed
         start_reg_address       = get_reg_address( fc_int{1}, fc_int{2}, start_reg );
         end_reg_address         = get_reg_address( fc_int{1}, fc_int{2}, end_reg );
-
         quantity_reg_addresses  = reg_num(start_reg_address, end_reg_address);
 % Generate modbus message 
         modbus_pdu              = gen_msg( dev_id, start_reg_address,...
                                            quantity_reg_addresses, 'rsr' );
 % Read the connection quality        
-        con_qual                = read_com_set('03',{'quality'});
+        con_qual  = read_com_set('03',{'quality'},cnt);
+        if strcmp(fc_int{1,1},'temperatur') == 1
+            lokal_temp = read_com_set('03',{'temperature'},cnt);
+        else
+            lokal_temp = [];
+        end
 % Write message on interface and read and process response 
         txdata                  = send_and_receive_data(modbus_pdu, fc_int,...
-                                                        res, con_qual, lng, lat);
+                                  res, con_qual, lng, lat, cnt, lokal_temp);
 
         waitbar(r/t,h)
                
 end
 % Save requested data in a seperate file
 new_data = evalin('base','new_data');
-filename = strcat(f_path,'\',city,'-',strrep(num2str(res),'.','_'),'_new_data_',...
-                  date,'_',num2str(date2utc(datevec(now))),'.mat');
+filename = strcat(f_path,'\',c_id,'-',strrep(num2str(res),'.','_'),'_new_data_',...
+                  date,'_',num2str(date2utc(datevec(now),MESZ_calc)),'.mat');
 save(filename,'new_data','-mat');
 % Reset new_data container
 new_data = [];
@@ -122,11 +124,13 @@ end
 assignin('base','new_data',new_data);
 % Update the remaining number of requests
 if ~isempty(u_c_n)
-    u_c_n = evalin('base','u_c_n');
+    u_c_n = evalin('base','update_cycle_number');
     u_c_n = u_c_n-1;
     fprintf('Noch %u ausstehende Abfrage(n).\n',u_c_n)
-    assignin('base','u_c_n',u_c_n);
+    assignin('base','update_cycle_number',u_c_n);
 end
+evalin('base',sprintf('save(''%s'')', strcat(f_path,'\workspace')));
+% Close waiting bar
 close(h);
 end
 

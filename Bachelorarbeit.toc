@@ -20,28 +20,44 @@
 \contentsline {section}{\numberline {3.1}Geforderte Funktionseigenschaften}{22}{section.3.1}
 \contentsline {section}{\numberline {3.2}Vorbereitende Ma\IeC {\ss }nahmen}{25}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Zuweisung variabler Inputparameter und Variableninitiierung}{25}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Aufbau von Strukturen}{26}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Aufbau von Strukturen}{27}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}\IeC {\"U}berpr\IeC {\"u}fung der Eingabeparameter}{27}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Verf\IeC {\"u}gbarkeitspr\IeC {\"u}fung der seriellen Schnittstelle}{31}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Verf\IeC {\"u}gbarkeitspr\IeC {\"u}fung der seriellen Schnittstelle}{32}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}Aufbau der seriellen Schnittstelle}{32}{section.3.3}
-\contentsline {section}{\numberline {3.4}Abgleich der Wetterregion im Register}{32}{section.3.4}
-\contentsline {section}{\numberline {3.5}Festlegung der Timerparameter und Starten des Timers}{33}{section.3.5}
-\contentsline {section}{\numberline {3.6}Abschicken der MODBUS-Anfragen}{35}{section.3.6}
-\contentsline {section}{\numberline {3.7}Senden und Empfangen}{39}{section.3.7}
-\contentsline {section}{\numberline {3.8}Rx-Datenverarbeitung}{40}{section.3.8}
-\contentsline {section}{\numberline {3.9}Datenverarbeitung}{42}{section.3.9}
-\contentsline {section}{\numberline {3.10}Funktionsaufbau}{55}{section.3.10}
-\contentsline {chapter}{\numberline {4}Datenanalyse}{56}{chapter.4}
-\contentsline {section}{\numberline {4.1}Sonnenscheindauer}{56}{section.4.1}
-\contentsline {section}{\numberline {4.2}Globalstrahlung}{58}{section.4.2}
-\contentsline {section}{\numberline {4.3}Niederschlagsmenge}{60}{section.4.3}
-\contentsline {section}{\numberline {4.4}Windst\IeC {\"a}rke}{61}{section.4.4}
-\contentsline {section}{\numberline {4.5}Mittlere Lufttemperatur}{62}{section.4.5}
-\contentsline {part}{III\hspace {1em}Schluss}{64}{part.3}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{65}{chapter.5}
-\contentsline {chapter}{Anhang}{66}{section*.28}
-\contentsline {chapter}{Anhang}{67}{section*.29}
-\contentsline {chapter}{\numberline {A}Aufbau der Wetterstation}{67}{appendix.A}
-\contentsline {chapter}{\numberline {B}Das MODBUS Protokoll}{68}{appendix.B}
-\contentsline {chapter}{\numberline {C}Hilfsprogramme}{70}{appendix.C}
-\contentsline {chapter}{\numberline {D}Abk\IeC {\"u}rzungsverzeichnis}{71}{appendix.D}
+\contentsline {section}{\numberline {3.4}Abgleich der Wetterregion im Register}{33}{section.3.4}
+\contentsline {section}{\numberline {3.5}Festlegung der Timerparameter und Starten des Timers}{34}{section.3.5}
+\contentsline {section}{\numberline {3.6}Abschicken der MODBUS-Anfragen}{37}{section.3.6}
+\contentsline {section}{\numberline {3.7}Senden und Empfangen}{41}{section.3.7}
+\contentsline {section}{\numberline {3.8}Rx-Datenverarbeitung}{42}{section.3.8}
+\contentsline {section}{\numberline {3.9}Datenverarbeitung}{44}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Interpolation}{52}{subsection.3.9.1}
+\contentsline {chapter}{\numberline {4}Datenanalyse}{60}{chapter.4}
+\contentsline {section}{\numberline {4.1}Sonnenscheindauer}{60}{section.4.1}
+\contentsline {section}{\numberline {4.2}Globalstrahlung}{62}{section.4.2}
+\contentsline {section}{\numberline {4.3}Niederschlagsmenge}{64}{section.4.3}
+\contentsline {section}{\numberline {4.4}Windst\IeC {\"a}rke}{65}{section.4.4}
+\contentsline {section}{\numberline {4.5}Mittlere Lufttemperatur}{67}{section.4.5}
+\contentsline {part}{III\hspace {1em}Schluss}{69}{part.3}
+\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{70}{chapter.5}
+\contentsline {chapter}{Anhang}{71}{section*.32}
+\contentsline {chapter}{Anhang}{72}{section*.33}
+\contentsline {chapter}{\numberline {A}Aufbau der Wetterstation}{72}{appendix.A}
+\contentsline {chapter}{\numberline {B}Das MODBUS Protokoll}{73}{appendix.B}
+\contentsline {chapter}{\numberline {C}Hilfsfunktionen}{75}{appendix.C}
+\contentsline {section}{\numberline {C.1}read\_com\_set}{75}{section.C.1}
+\contentsline {section}{\numberline {C.2}write\_com\_set}{76}{section.C.2}
+\contentsline {section}{\numberline {C.3}stop\_timer}{77}{section.C.3}
+\contentsline {section}{\numberline {C.4}get\_reg\_address}{78}{section.C.4}
+\contentsline {section}{\numberline {C.5}reg\_num}{79}{section.C.5}
+\contentsline {section}{\numberline {C.6}format\_modbus\_msg}{79}{section.C.6}
+\contentsline {section}{\numberline {C.7}fcode\_check}{80}{section.C.7}
+\contentsline {section}{\numberline {C.8}MESZ\_calc}{80}{section.C.8}
+\contentsline {section}{\numberline {C.9}res\_factor}{81}{section.C.9}
+\contentsline {section}{\numberline {C.10}utc2date}{82}{section.C.10}
+\contentsline {section}{\numberline {C.11}tvector}{83}{section.C.11}
+\contentsline {section}{\numberline {C.12}date2utc}{85}{section.C.12}
+\contentsline {section}{\numberline {C.13}data\_mult}{85}{section.C.13}
+\contentsline {section}{\numberline {C.14}diurnal\_var}{86}{section.C.14}
+\contentsline {section}{\numberline {C.15}neg\_val\_corr}{87}{section.C.15}
+\contentsline {section}{\numberline {C.16}crc\_check}{88}{section.C.16}
+\contentsline {chapter}{\numberline {D}Abk\IeC {\"u}rzungsverzeichnis}{90}{appendix.D}

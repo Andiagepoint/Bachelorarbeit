@@ -121,13 +121,9 @@ updateinterval_values = {'6', '12', '24'};
     end
     
 end
-% If no error exists don't return a error msg or if there are less than 6
-% error messages, make the last error message empty so it could be
-% displayed in the fprintf command.
+% If no error exists don't return a error msg. 
     if true(val_inpt)
         err_msg           = NaN;
-    elseif size(err_msg,2) < 10
-        err_msg{10}        = [];
     end  
 
 end

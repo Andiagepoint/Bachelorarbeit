@@ -1,16 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{googleearth}
-Abruf vom 17.01.2014 19.25 {U}hr.
-\newblock Google Earth Version 7.1.2.2041, Januar 2014.
-
-\bibitem{HKWDoc}
-{HKW-Elektronik GmbH}.
-\newblock {\em Wetterprognose-Station Kompakt WS-K xx Modbus}.
-\newblock HKW-Elektronik GmbH, Industriestraße 12, D-99846 Seebach/Thur,
-  November 2012.
-\newblock Stand 23.11.2012.
-
 \bibitem{EVOutlook}
 Paul Telleen et~al. Tali~Trigg.
 \newblock Global {EV} {O}utlook.
@@ -41,6 +30,17 @@ F.~Bouhafs, M.~Mackay, and M.~Merabti.
   smart grid.
 \newblock {\em Power and Energy Magazine, IEEE}, 10(1):24--32, 2012.
 
+\bibitem{HKWDoc}
+{HKW-Elektronik GmbH}.
+\newblock {\em Wetterprognose-Station Kompakt WS-K xx Modbus}.
+\newblock HKW-Elektronik GmbH, Industriestraße 12, D-99846 Seebach/Thur,
+  November 2012.
+\newblock Stand 23.11.2012.
+
+\bibitem{googleearth}
+Abruf vom 17.01.2014 19.25 {U}hr.
+\newblock Google Earth Version 7.1.2.2041, Januar 2014.
+
 \bibitem{Kuveler.2007}
 Gerd K{\"u}veler and Dietrich Schwoch.
 \newblock {\em {I}nformatik f{\"u}r {I}ngenieure und {N}aturwissenschaftler}.
@@ -55,6 +55,13 @@ Gerd K{\"u}veler and Dietrich Schwoch.
   \url{http://www.modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf};
   zuletzt geprüft am 24.01.2014.
 
+\bibitem{modicon}
+Industrial Automation~Systems MODICON, Inc.
+\newblock Modicon {M}odbus {P}rotocol {R}eference {G}uide.
+\newblock Website, Juni 1996.
+\newblock Online verfügbar auf \url{http://modbus.org/docs/PI_MBUS_300.pdf};
+  zuletzt geprüft am 28.01.2014.
+
 \bibitem{Schleicher.2008}
 Manfred Schleicher.
 \newblock {\em {D}igitale {S}chnittstellen und {B}ussysteme: {G}rundlagen und
@@ -63,33 +70,19 @@ Manfred Schleicher.
   {C}{A}{N}open und {H}{A}{R}{T}}.
 \newblock JUMO, Fulda, 5 edition, 2008.
 
-\bibitem{modicon}
-Industrial Automation~Systems MODICON, Inc.
-\newblock Modicon {M}odbus {P}rotocol {R}eference {G}uide.
-\newblock PDF, Juni 1996.
-\newblock Online verfügbar auf \url{http://modbus.org/docs/PI_MBUS_300.pdf};
-  zuletzt geprüft am 28.01.2014.
-
 \bibitem{eterlogic}
 Virtual serial ports emulator.
-\newblock Download.
+\newblock Website.
 \newblock Online verfügbar auf
   \url{http://www.eterlogic.com/downloads/SetupVSPE.zip}; zuletzt geprüft am
   28.01.2014.
 
 \bibitem{everest}
 Peakhmi {M}odbus {S}erial {RTU} {S}lave simulator.
-\newblock Download.
+\newblock Website.
 \newblock Online verfügbar auf
   \url{http://www.hmisys.com/downloads/PeakHMISlaveSimulatorInstall.exe};
   zuletzt geprüft am 28.01.2014.
-
-\bibitem{Wagner.2006}
-Andreas Wagner.
-\newblock {\em {P}hotovoltaik {E}ngineering: {H}andbuch f{\"u}r {P}lanung,
-  {E}ntwicklung und {A}nwendung}.
-\newblock {V}{D}{I}-{B}uch. Springer-Verlag Berlin Heidelberg, Berlin and
-  Heidelberg, 2 edition, 2006.
 
 \bibitem{SLM}
 John D'Errico.
@@ -104,6 +97,12 @@ J.~S. Armstrong and Frederick~Lynch Collopy.
 \newblock {E}rror measures for generalizing about forecasting methods:
   {E}mpirical comparisons.
 \newblock {\em International journal of forecasting}, 1992.
+
+\bibitem{loesslein}
+Herr~Heinz Lösslein.
+\newblock Re: Frage bzgl. wetterdaten.
+\newblock Email.
+\newblock Email Korrespondenz vom 27.01.2014.
 
 \bibitem{TelHKW}
 Hr. Volkhardt.
@@ -120,7 +119,7 @@ Lars Kühl.
 \bibitem{DWD}
 Roland Wengenmayr.
 \newblock Wie gut sind {W}ettervorhersagen? {Q}ualitätsprüfung beim {DWD}.
-\newblock Broschüre, Oktober 2009.
+\newblock Website, Oktober 2009.
 \newblock Online verfügbar auf
   \url{http://www.dwd.de/bvbw/generator/DWDWWW/Content/Presse/Broschueren/Verifikation__PDF,templateId=raw,property=publicationFile.pdf/Verifikation_PDF.pdf};
   zuletzt geprüft am 24.01.2014.
@@ -128,9 +127,30 @@ Roland Wengenmayr.
 \bibitem{stadtklima}
 Steinicke und Streifeneder.
 \newblock Thermalbefliegung {M}ünchen {T}agaufnahme.
-\newblock PDF, Mai 1999.
+\newblock Website, Mai 1999.
 \newblock Online verfügbar auf
   \url{http://www.muenchen.de/rathaus/dms/Home/Stadtverwaltung/Referat-fuer-Gesundheit-und-Umwelt/Dokumente/Stadtklima/mue_tag_klein/Thermalbefliegung%20Tagaufnahme.pdf};
   zuletzt geprüft am 24.01.2014.
+
+\bibitem{utc2date}
+Prof.~Beat Hirsbrunner.
+\newblock Minix source code.
+\newblock Website, 2005/2006.
+\newblock Online verfügbar auf
+  \url{http://diuf.unifr.ch/pai/education/2005_2006/courses/os/minix/idx/S/sys%20src%20lib%20ansi%20gmtime.c.html#11};
+  zuletzt geprüft am 24.01.2014.
+
+\bibitem{date2utc}
+Ieee standard for information technology- portable operating system interface
+  (posix) base specifications, issue 7.
+\newblock {\em IEEE Std 1003.1-2008 (Revision of IEEE Std 1003.1-2004)}, pages
+  c1--3826, 2008.
+
+\bibitem{Wagner.2006}
+Andreas Wagner.
+\newblock {\em {P}hotovoltaik {E}ngineering: {H}andbuch f{\"u}r {P}lanung,
+  {E}ntwicklung und {A}nwendung}.
+\newblock {V}{D}{I}-{B}uch. Springer-Verlag Berlin Heidelberg, Berlin and
+  Heidelberg, 2 edition, 2006.
 
 \end{thebibliography}

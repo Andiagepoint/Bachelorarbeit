@@ -1,5 +1,5 @@
 function [ value ] = send_and_receive_data( modbus_msg, field_name, res,...
-                                            con_qual, lng, lat )
+                                            con_qual, lng, lat, cnt, lokal_temp )
 %Writes and reads modbus message on serial interface
 %   Detailed explanation goes here
 
@@ -25,8 +25,8 @@ end
 [rxdata] = fread(serial_interface, bytes_num, 'uint8');
 
 % Call rxdata processing
-[value, error_msg] = rxdata_processing( rxdata, modbus_msg, field_name, res,...
-                                        con_qual, lng, lat );
+[value] = rxdata_processing( rxdata, modbus_msg, field_name, res,...
+                                        con_qual, lng, lat, cnt, lokal_temp );
 
 end
 
